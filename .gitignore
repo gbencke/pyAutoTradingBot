@@ -4,5 +4,7 @@ __pycache__/
 .vscode/
 .ipynb_checkpoints/
 output/
+src/pyautotrader/test/process_long.py
+
 
 
