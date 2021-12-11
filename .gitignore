@@ -5,6 +5,7 @@ __pycache__/
 .ipynb_checkpoints/
 output/
 src/pyautotrader/test/process_long.py
+src/pyautotrader/test/process_short.py
 
 
 
