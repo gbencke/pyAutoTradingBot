@@ -31,10 +31,13 @@ def transverse_tree(current_booster, generated_trees):
                      [0], current_booster, [], generated_trees)
 
 
-def export_model_python(ast, code_name, output_file_name):
-    generated_code = [f"def {code_name}(cond):", f"    final_res=0.0"]
+def export_model_python(ast, code_name, output_file_name, base_score):
+    generated_code = [f"def {code_name}(cond):", f"    final_res={base_score}"]
     for current_booster in ast:
+        generated_code.append(
+            f"# Processing Booster:{current_booster['booster']}\n")
         transverse_tree(current_booster, generated_code)
+        generated_code.append('\n\n')
 
     generated_code.append("    return final_res")
 

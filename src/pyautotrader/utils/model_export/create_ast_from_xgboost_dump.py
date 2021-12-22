@@ -77,4 +77,5 @@ def create_ast_from_xgboost_dump(file_to_read):
             else:
                 current_booster['raw_lines'].append(current_line)
 
+    process_booster(current_booster)
     return generated_boosters
