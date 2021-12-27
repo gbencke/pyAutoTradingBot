@@ -51,14 +51,14 @@ def import_data_from_profit_chart_into_metatrader(source, destination, initialda
             'datetime': format_datetime(x['date'], x['time'] if periodicity != 'DAILY' else None),
             'open': format_value(x['open']),
             'high': format_value(x['high']),
-            'low': format_value(x['high']),
-            'close': format_value(x['high']),
+            'low': format_value(x['low']),
+            'close': format_value(x['close']),
             'business': format_int_value(x['business']),
             'volume': format_int_value(x['volume'])
         } for x in source_records]
         destination_records = sorted(
             destination_records, key=lambda x: x['datetime'])
-        if initialdate is not None:
+        if initialdate is not None and False:
             destination_records = [
                 x for x in destination_records if x['datetime'] >= initialdate]
         df_to_csv = pd.DataFrame(destination_records)
