@@ -24,12 +24,15 @@ def process_ast_node_for_profitchart(current_node, current_booster, path, genera
             condition_py += '('
             condition_py += current_condition['condition']['variable']
             condition_py += current_condition['condition']['operator']
-            condition_py += str(current_condition['condition']['value'])
+            cur_value = str(current_condition['condition']['value'])
+            condition_py += cur_value if not 'e-' in cur_value else '0.0'
             condition_py += ') and '
             current_line += condition_py
         current_line = current_line[:-5]
+        cur_res = str(current_node['result'])
+        cur_res = cur_res if not 'e-' in cur_res else '0.0'
         current_line = indent(
-            f"if {current_line} then final_res:=final_res + ({str(current_node['result'])});", current_indent + 1)
+            f"if {current_line} then final_res:=final_res + ({cur_res});", current_indent + 1)
         generated_trees.append(current_line)
 
 
