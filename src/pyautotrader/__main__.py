@@ -1,8 +1,8 @@
 import sys
 import os
 import argparse
-from pyautotrader.utils.data_import import import_data_from_profit_chart_into_metatrader
-from pyautotrader.utils.model_export import create_ast_from_xgboost_dump, export_model_python
+from pyautotrader.utils.data_import import import_data_from_profit_chart_into_metatrader, import_data_from_profit_chart
+from pyautotrader.utils.model_export import generate_language_model
 
 command_parser = argparse.ArgumentParser(
     description='pyAutoTrader - Universal Python Automatic Trading Bot - Utils CLI')
@@ -79,43 +79,6 @@ command_parser.add_argument('--save-model-to',
 
 
 args = command_parser.parse_args()
-
-
-def import_data_from_profit_chart(args):
-    if args.destination is None:
-        print("Missing --destination parameter")
-        sys.exit(1)
-    if args.source is None:
-        print("Missing --source parameter")
-        sys.exit(1)
-    import_data_from_profit_chart_into_metatrader(
-        args.source, args.destination, args.initialdate)
-
-
-def generate_python_language_model(args):
-    if args.pythonfunctionname is None:
-        print('Missing the python function name...')
-        sys.exit(1)
-    if args.savemodelto is None:
-        print('Missing the destination python file name...')
-        sys.exit(1)
-    ast = create_ast_from_xgboost_dump(args.model)
-    export_model_python(ast, args.pythonfunctionname, args.savemodelto, 0.5)
-
-
-def generate_language_model(args):
-    if args.language is None:
-        print('Missing language to export the model to')
-        sys.exit(1)
-    if args.model is None:
-        print('Missing source XGBoost model dump, to generate the language model from.')
-        sys.exit(1)
-    if args.savemodelto is None:
-        print('Missing the destination file for the language model.')
-        sys.exit(1)
-    if args.language == 'python':
-        generate_python_language_model(args)
-
 
 if __name__ == '__main__':
     if args.command == 'import_data_from_profit_chart_into_metatrader':

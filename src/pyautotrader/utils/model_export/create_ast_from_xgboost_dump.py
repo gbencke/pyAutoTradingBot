@@ -1,3 +1,30 @@
+def process_ast_node_for_features(current_node, current_booster, path, generated_features):
+    if current_node['node_type'] == 'node':
+        process_ast_node_for_features(
+            current_booster['nodes'][current_node['result']['yes']],
+            current_booster,
+            path + [{'result': 'yes', 'condition': current_node['condition']}], generated_features)
+        process_ast_node_for_features(
+            current_booster['nodes'][current_node['result']['no']],
+            current_booster,
+            path + [{'result': 'no', 'condition': current_node['condition']}], generated_features)
+    if current_node['node_type'] == 'leaf':
+        current_line = ''
+        for current_condition in path:
+            generated_features.append(
+                current_condition['condition']['variable'])
+
+
+def get_features_from_ast(ast):
+    features_to_return = []
+    for current_booster in ast:
+        process_ast_node_for_features(current_booster['nodes']
+                                      [0], current_booster, [], features_to_return)
+    features_to_return = list(set(features_to_return))
+    features_to_return.sort()
+    return features_to_return
+
+
 def create_ast_from_xgboost_dump(file_to_read):
     current_booster = None
     generated_boosters = []
