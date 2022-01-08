@@ -42,7 +42,7 @@ def transverse_tree_for_profitchart(current_booster, generated_code, current_ind
 
 
 def export_model(ast, model_name, output_file_name, initial_bias, decision_boundary, generated_code, current_indent):
-    generated_code += ['', indent(f"function {model_name}: Boolean;", current_indent),
+    generated_code += ['', indent(f"function {model_name}: Float;", current_indent),
                        indent("var", current_indent),
                        indent("final_res: Float;", current_indent + 1)]
 
@@ -52,6 +52,9 @@ def export_model(ast, model_name, output_file_name, initial_bias, decision_bound
     generated_code += [indent("begin", current_indent),
                        indent(f"final_res:={initial_bias};", current_indent + 1)]
 
+    generated_code += [indent(f'{x} := 0.0 ;', current_indent + 1)
+                       for x in get_features_from_ast(ast)]
+
     for current_booster in ast:
         generated_code.append(
             indent(f"{{ Processing Booster:{current_booster['booster']}}}", current_indent + 1))
@@ -60,7 +63,7 @@ def export_model(ast, model_name, output_file_name, initial_bias, decision_bound
         generated_code.append(indent('\n', current_indent))
 
     generated_code.append(
-        indent(f"Result:=(final_res > {decision_boundary});", current_indent + 1))
+        indent(f"Result:= final_res;", current_indent + 1))
     generated_code.append(indent("end;\n", current_indent))
 
 
@@ -71,6 +74,13 @@ def generate_header(generated_code):
 def generate_global_variables(generated_code, current_indent):
     generated_code.append('var')
     generated_code.append(indent('Resultado: Integer;', current_indent + 1))
+
+
+def generate_indicator_code(generated_code):
+    generated_code.append('SetPlotColor(1,RGB(255,0,0));')
+    generated_code.append('SetPlotColor(2,RGB(0,255,0));')
+    generated_code.append('Plot(ShouldShort);')
+    generated_code.append('Plot(ShouldLong);')
 
 
 def export_model_profitchart(ast_short, ast_long, output_file_name, initial_bias, decision_boundary):
@@ -89,6 +99,8 @@ def export_model_profitchart(ast_short, ast_long, output_file_name, initial_bias
                  generated_code, 1)
 
     generated_code.append('begin')
+
+    generate_indicator_code(generated_code)
 
     generated_code.append('end;')
 
