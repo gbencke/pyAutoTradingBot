@@ -1,5 +1,6 @@
-from .export_model_python import generate_python_language_model
+from .export_model_python import generate_python_language_model, export_model_python
 from .export_model_profitchart import generate_profitchart_language_model
+from .create_ast_from_xgboost_dump import create_ast_from_xgboost_dump
 
 
 def generate_language_model(args):
