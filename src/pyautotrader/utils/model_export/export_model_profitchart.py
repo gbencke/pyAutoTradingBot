@@ -10,16 +10,16 @@ def initialize_variable(var_name):
         return 'current_bar_in_date:=0;'
 
     if var_name == 'previous_close':
-        return 'previous_close:=CloseD(1);'
+        return 'previous_close:=((CloseD(1) / current_open) - 1) * 100;'
 
     if var_name == 'previous_high':
-        return 'previous_high:=HighD(1);'
+        return 'previous_high:=((HighD(1) / current_open) - 1) * 100;'
 
     if var_name == 'previous_low':
-        return 'previous_low:=LowD(1);'
+        return 'previous_low:=((LowD(1) / current_open) - 1) * 100;'
 
     if var_name == 'previous_open':
-        return 'previous_open:=OpenD(1);'
+        return 'previous_open:=((OpenD(1) / current_open) - 1) * 100;'
 
     if var_name == 'x11_high_slope':
         return 'x11_high_slope:=0;'
@@ -38,12 +38,12 @@ def initialize_variable(var_name):
         if var_name == f'x{x}_body':
             ret = ''
             ret += f' if open[{i}] > close[{i}] then '
-            ret += f' x{x}_body := (open[{i}] / close[{i}]) * 100'
+            ret += f' x{x}_body := ((open[{i}] / close[{i}]) - 1) * 100'
             ret += f' else '
-            ret += f' x{x}_body := (close[{i}] / open[{i}]) * 100;'
+            ret += f' x{x}_body := ((close[{i}] / open[{i}]) - 1) * 100;'
             return ret
         if var_name == f'x{x}_close':
-            return f"x{x}_close:=close[{i}];"
+            return f"x{x}_close:=((close[{i}]/current_open)-1)*100;"
 
         if var_name == f'x{x}_ema144':
             return f"x{x}_ema144:=(((MediaExp(144,Close)[{i}])/current_open)-1)*100;"
@@ -88,16 +88,16 @@ def initialize_variable(var_name):
             return f"x{x}_open:=(((Open[{i}]/current_open)-1)*100);"
 
         if var_name == f'x{x}_previous_close':
-            return f"x{x}_previous_close:=(((CloseD({i})/close[{i}])-1)*100);"
+            return f"x{x}_previous_close:=(((CloseD(1)/close[{i}])-1)*100);"
 
         if var_name == f'x{x}_previous_high':
-            return f"x{x}_previous_high:=(((HighD({i})/close[{i}])-1)*100);"
+            return f"x{x}_previous_high:=(((HighD(1)/close[{i}])-1)*100);"
 
         if var_name == f'x{x}_previous_low':
-            return f"x{x}_previous_low:=(((LowD({i})/close[{i}])-1)*100);"
+            return f"x{x}_previous_low:=(((LowD(1)/close[{i}])-1)*100);"
 
         if var_name == f'x{x}_previous_open':
-            return f"x{x}_previous_open:=(((OpenD({i})/close[{i}])-1)*100);"
+            return f"x{x}_previous_open:=(((OpenD(1)/close[{i}])-1)*100);"
 
         if var_name == f'x{x}_roc':
             return f"x{x}_roc:=(((open[{i}]/close[{i}])-1)*100);"
@@ -214,33 +214,17 @@ def generate_global_variables(generated_code, current_indent):
 
 
 def generate_indicator_code(generated_code, minimum_time, minimum_day, decision_boundary):
-    generated_code.append(indent(f'if Date = 1220104 then', 1))
+    generated_code.append(indent(f'if Date = 1211116 then', 1))
     generated_code.append(indent(f'begin', 1))
     generated_code.append(
         indent(f'if (Time < {minimum_time}) then begin EstadoAtual:=ESTADO_NEUTRO; LastPlot:=0; end;', 1+1))
     generated_code.append(
         indent(f'if (Time >= {minimum_time}) then ', 1+1))
     generated_code.append(indent(f'begin', 1+1))
-    generated_code.append(indent(f'LastPlot:=ShouldShort;', 2+1))
-    generated_code.append(
-        indent(f'if LastPlot >= {decision_boundary} then', 2+1))
-    generated_code.append(indent(f'begin', 2+1))
-    generated_code.append(indent('EstadoAtual:=ESTADO_VENDIDO;', 3+1))
-    generated_code.append(indent(f'end;', 2+1))
-
+    generated_code.append(indent(f'Plot(ShouldShort);', 3))
+    generated_code.append(indent(f'Plot2(ShouldLong);', 3))
     generated_code.append(indent(f'end;', 1+1))
     generated_code.append(indent(f'end;', 1))
-
-    generated_code.append(
-        indent('if EstadoAtual=ESTADO_COMPRADO then begin PaintBar(clGreen);SetPlotColor(1,RGB(0,255,0));end;', 1))
-    generated_code.append(
-        indent('if EstadoAtual=ESTADO_VENDIDO then begin PaintBar(clRed); SetPlotColor(1, RGB(255, 0, 0));end;', 1))
-    generated_code.append(
-        indent('if EstadoAtual=ESTADO_ZERADO then begin PaintBar(clYellow); SetPlotColor(1, RGB(255, 255, 0));end;', 1))
-    generated_code.append(
-        indent('if EstadoAtual=ESTADO_NEUTRO then begin PaintBar(clWhite); SetPlotColor(1, RGB(255, 255, 255));end;', 1))
-    generated_code.append(
-        indent('Plot(LastPlot);', 1))
 
 
 def export_model_profitchart(ast_short, ast_long, output_file_name, initial_bias, decision_boundary, minimum_day, minimum_time):
