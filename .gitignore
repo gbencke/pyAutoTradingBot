@@ -8,6 +8,7 @@ src/pyautotrader/test/process_long.py
 src/pyautotrader/test/process_short.py
 *.total.pickle
 *.nbconvert.ipynb
+src/strategies/B3/WDOL/00.data/strategies/
 
 
 
