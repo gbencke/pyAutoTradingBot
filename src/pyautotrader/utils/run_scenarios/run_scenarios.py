@@ -1,7 +1,73 @@
 import os
 import sys
 import papermill as pm
+import pandas as pd
+import joblib
 from datetime import datetime
+
+
+def summarize():
+    strategies_run = []
+
+    current_strategies_folder = os.path.join(
+        os.getcwd(), '..', 'strategies', 'B3', 'WDOL', '00.data', 'strategies')
+
+    final_excel_summary = os.path.join(
+        current_strategies_folder, 'strategy_summary.xlsx')
+
+    strategies = set([x[0].replace(current_strategies_folder, '').split('\\')[1]
+                      for x in os.walk(current_strategies_folder)
+                      if x[0] != current_strategies_folder])
+
+    for current_strategy in strategies:
+        current_strategy_folder = os.path.join(
+            current_strategies_folder, current_strategy)
+
+        parameter_file = [x for x in os.listdir(
+            current_strategy_folder) if x.endswith('parameters.pickle')]
+        if len(parameter_file) == 0:
+            continue
+        else:
+            parameter_file = os.path.join(
+                current_strategy_folder, parameter_file[0])
+
+        test_trades = [x for x in os.listdir(
+            current_strategy_folder) if x.endswith('test_trades.xlsx')]
+        if len(test_trades) == 0:
+            continue
+        else:
+            test_trades = os.path.join(current_strategy_folder, test_trades[0])
+
+        current_parameters = joblib.load(parameter_file)
+        trades = pd.read_excel(test_trades)
+
+        strategies_run.append({
+            "current_strategy": current_strategy,
+            "current_exchange": current_parameters['CURRENT_EXCHANGE'],
+            "minimum_time": current_parameters['MINIMUM_TIME'],
+            "maximum_time": current_parameters['MAXIMUM_TIME'],
+            "minimum_date_dataframe": current_parameters['MINIMUM_DATE_DATAFRAME'],
+            "minimum_date_trade": current_parameters['MINIMUM_DATE_TRADE'],
+            "max_train_date": current_parameters['MAX_TRAIN_DATE'],
+            "max_trade_duration": current_parameters['MAX_TRADE_DURATION'],
+            "current_target": current_parameters['CURRENT_TARGET'],
+            "current_stop": current_parameters['CURRENT_STOP'],
+            "current_asset": current_parameters['CURRENT_ASSET'],
+            "current_timeframe": current_parameters['CURRENT_TIMEFRAME'],
+            "decision_boundary": current_parameters['DECISION_BOUNDARY'],
+            "total_result": trades['result'].sum(),
+            "avg_result": trades['result'].mean(),
+            "number_of_trades": int(trades['result'].count()),
+            'number_of_positive_trades': trades[trades['result'] >= 0].shape[0],
+            'number_of_negative_trades': trades[trades['result'] < 0].shape[0],
+            'percent_of_winning':  (trades[trades['result'] >= 0].shape[0] / trades['result'].count()) * 100,
+            'max_winner': trades['result'].max(),
+            'max_loser': trades['result'].min(),
+            'first_trade': str(trades['Date'].min()),
+            'last_trade': str(trades['Date'].max())
+        })
+
+    pd.DataFrame(strategies_run).to_excel(final_excel_summary)
 
 
 def run_notebook():
@@ -84,3 +150,5 @@ def run_scenarios(args):
                                             os.getcwd(), '..', 'strategies', 'B3', 'WDOL', '00.data', 'input')
                                         for current_interaction in range(MINIMUM_INTERACTIONS):
                                             run_notebook()
+
+    summarize()
