@@ -6,6 +6,10 @@ import joblib
 from datetime import datetime
 
 
+def summarize_scenarios(args):
+    summarize()
+
+
 def summarize():
     strategies_run = []
 
@@ -15,7 +19,7 @@ def summarize():
     final_excel_summary = os.path.join(
         current_strategies_folder, 'strategy_summary.xlsx')
 
-    strategies = set([x[0].replace(current_strategies_folder, '').split('\\')[1]
+    strategies = set([x[0].replace(current_strategies_folder, '').split(os.sep)[1]
                       for x in os.walk(current_strategies_folder)
                       if x[0] != current_strategies_folder])
 
