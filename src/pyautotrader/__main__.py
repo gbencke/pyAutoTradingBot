@@ -5,6 +5,7 @@ from pyautotrader.utils.data_import import import_data_from_profit_chart, add_da
 from pyautotrader.utils.model_export import generate_language_model, add_generate_language_args
 from pyautotrader.utils.run_scenarios import run_scenarios, add_run_scenarios_args, summarize_scenarios
 from pyautotrader.server import start_server, add_server_args
+from pyautotrader.models import migrate_tables
 
 command_parser = argparse.ArgumentParser(
     description='pyAutoTrader - Universal Python Automatic Trading Bot - Utils CLI')
@@ -15,6 +16,7 @@ command_parser.add_argument('command',
                             choices=['import_data_from_profit_chart_into_metatrader',
                                      'generate_code',
                                      'run_scenarios',
+                                     'migrate_tables',
                                      'summarize_scenarios',
                                      'start_server'],
                             help='Command to be performed by CLI, can be: [import_data_from_profit_chart_into_metatrader, generate_code, start_server]')
@@ -37,3 +39,5 @@ if __name__ == '__main__':
         summarize_scenarios(args)
     if args.command == 'start_server':
         start_server(args)
+    if args.command == 'migrate_tables':
+        migrate_tables(args)
