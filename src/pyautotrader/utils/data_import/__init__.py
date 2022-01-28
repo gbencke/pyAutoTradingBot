@@ -1,4 +1,5 @@
 from .import_data_from_profit_chart_into_metatrader import import_data_from_profit_chart_into_metatrader
+from .import_data_from_csv import import_data_from_csv
 
 
 def import_data_from_profit_chart(args):
@@ -25,3 +26,21 @@ def add_data_import_args(command_parser):
                                 type=str,
                                 required=False,
                                 help='CSV destination file for imported data. (Required for import_data_from_profit_chart_into_metatrader command')
+
+    command_parser.add_argument('--asset',
+                                metavar='asset',
+                                dest='asset',
+                                type=str,
+                                help='Asset that the Data belongs to...')
+
+    command_parser.add_argument('--exchange',
+                                metavar='exchange',
+                                dest='exchange',
+                                type=str,
+                                help='Exchange that the Data belongs to...')
+
+    command_parser.add_argument('--timeframe',
+                                metavar='timeframe',
+                                dest='timeframe',
+                                type=str,
+                                help='TimeFrame that the Data belongs to...')
