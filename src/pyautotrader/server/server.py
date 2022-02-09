@@ -1,20 +1,36 @@
+import os
 import sys
 import uvicorn
+import glob
+import json
+
 from fastapi import FastAPI, HTTPException
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
+import joblib
 
 from .value_objects import Quote
 from pyautotrader.models.entities import QuoteORM
 
 app = FastAPI()
 engine = None
+model = None
 
 
 @app.get("/")
 async def root():
     return {"message": "Ok, worked!"}
+
+
+@app.get("/parameters/")
+async def parameters():
+    global model
+    parameters_files = glob.glob(os.path.join(model, "*.parameters.pickle"))
+    if len(parameters_files) < 0:
+        raise HTTPException(
+            status_code=500, detail='Could no find the parameters file...')
+    return joblib.load(parameters_files[0])
 
 
 @app.post("/quotes/{exchange}/{asset}/{timeframe}/")
@@ -43,19 +59,36 @@ async def post_quote(exchange: str, asset: str, timeframe: str, quote: Quote):
         raise HTTPException(status_code=500, detail=str(ex))
 
 
+def check_model(model):
+    return True
+
+
 def start_server(args):
     global engine
+    global model
 
     CURRENT_IP = "127.0.0.1"
     CURRENT_PORT = 5000
 
+    if args.xgboost_model is None:
+        print('In order to ser a model, you need to specify the model.')
+        sys.exit(1)
+    else:
+        model = args.xgboost_model
+
     if args.sqlalchemy_connection_string is None:
         print('In order to start the server, you need to specify the SQLAlchemy connection string...')
         sys.exit(1)
+
     if args.server_port is not None:
         CURRENT_PORT = args.server_port
+
     if args.listening_ip is not None:
         CURRENT_IP = args.listening_ip
+
+    if not check_model(model):
+        print('It seems that the model is not valid...')
+        sys.exit(1)
 
     engine = create_engine(args.sqlalchemy_connection_string)
 

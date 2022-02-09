@@ -18,3 +18,9 @@ def add_server_args(command_parser):
                                 type=str,
                                 required=False,
                                 help='IP for the listening of the server')
+    command_parser.add_argument('--xgboost-model',
+                                metavar='xgboost_model',
+                                dest='xgboost_model',
+                                type=str,
+                                required=False,
+                                help='XGBoost Model that will be served through FASTApi')
