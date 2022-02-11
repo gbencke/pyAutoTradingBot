@@ -58,7 +58,7 @@ def import_data_from_profit_chart_into_metatrader(source, destination, initialda
         } for x in source_records]
         destination_records = sorted(
             destination_records, key=lambda x: x['datetime'])
-        if initialdate is not None and False:
+        if initialdate is not None:
             destination_records = [
                 x for x in destination_records if x['datetime'] >= initialdate]
         df_to_csv = pd.DataFrame(destination_records)
