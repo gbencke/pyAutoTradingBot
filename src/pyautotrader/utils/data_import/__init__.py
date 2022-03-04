@@ -1,5 +1,6 @@
 from .import_data_from_profit_chart_into_metatrader import import_data_from_profit_chart_into_metatrader
 from .import_data_from_csv import import_data_from_csv
+from .aggregate_data_from_csv import aggregate_data_from_csv
 
 
 def import_data_from_profit_chart(args):
