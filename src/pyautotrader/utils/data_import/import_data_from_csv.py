@@ -24,8 +24,8 @@ def import_data_from_csv(args):
         print('We need to specify the timeframe that we are importing into...')
         sys.exit(1)
 
-    if args.timeframe not in ['5Min', '15Min', '30Min', '60Min', 'Daily']:
-        print('Values for timeframe are: 5Min,15Min,30Min, 60Min, Daily')
+    if args.timeframe not in ['5Min', '10Min', '15Min', '30Min', '60Min', 'Daily']:
+        print('Values for timeframe are: 5Min, 10Min, 15Min, 30Min, 60Min, Daily')
         sys.exit(1)
 
     csv_to_import = pd.read_csv(args.source)

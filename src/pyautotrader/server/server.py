@@ -3,14 +3,16 @@ import sys
 import uvicorn
 import glob
 import json
+import joblib
 
 from fastapi import FastAPI, HTTPException
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
-import joblib
 
 from .value_objects import Quote
+from .parameters import get_parameters
+from .predict import get_predict_from_db
 from pyautotrader.models.entities import QuoteORM
 
 app = FastAPI()
@@ -23,14 +25,16 @@ async def root():
     return {"message": "Ok, worked!"}
 
 
+@app.get("/predict/{exchange}/{asset}/{timeframe}/{date}/{time}/")
+async def get_predict(exchange: str, asset: str, timeframe: str, date: str, time: str):
+    global model
+    return get_predict_from_db(exchange, asset, timeframe, date, time, get_parameters((model)))
+
+
 @app.get("/parameters/")
 async def parameters():
     global model
-    parameters_files = glob.glob(os.path.join(model, "*.parameters.pickle"))
-    if len(parameters_files) < 0:
-        raise HTTPException(
-            status_code=500, detail='Could no find the parameters file...')
-    return joblib.load(parameters_files[0])
+    return get_parameters(model)
 
 
 @app.post("/quotes/{exchange}/{asset}/{timeframe}/")
