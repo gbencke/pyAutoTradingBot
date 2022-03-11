@@ -1,12 +1,11 @@
 
 
 TIMEFRAMES = [
-        { 'timeframe': '5Min', 'file': 'WDO$M5.csv' , 'tradeduration': 24},
-        { 'timeframe': '10Min', 'file': 'WDO$M10.csv' , 'tradeduration': 12}]
+        { 'timeframe': '10Min', 'file': 'WDO$M10.csv' , 'tradeduration': 24}]
 
 
-CURRENT_TARGET = [ 1.0, 0.8] 
-CURRENT_STOP = [ 0.5, 0.4, 0.3]
+CURRENT_TARGET = [ 1.2, 1.0, 0.8] 
+CURRENT_STOP = [ 0.7, 0.6, 0.5]
 
 for curTIMEFRAME in TIMEFRAMES:
     for curTARGET in CURRENT_TARGET:
