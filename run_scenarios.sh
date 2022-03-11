@@ -92,6 +92,8 @@ export CURRENT_TIMEFRAME=10Min
 export MAX_TRADE_DURATION=12
 python __main__.py run_scenarios --minimum-interactions 20
 
+python __main__.py summarize_scenarios
+
 cd ../strategies/B3/WDOL/00.data/
 
 
