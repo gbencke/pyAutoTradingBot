@@ -2,6 +2,7 @@ import sys
 import datetime
 import os
 import glob
+import subprocess
 import pandas as pd
 
 PYAUTOTRADER_PROFITCHART_CSV_FOLDER = None
@@ -160,6 +161,42 @@ def remove_old_files():
         os.unlink(current_csv_file)
 
 
+def aggregate_files():
+    global PYAUTOTRADER_PROFITCHART_CSV_FOLDER
+    global PYAUTOTRADER_ROOT
+    global PYAUTOTRADER_CSV_INPUT_SEARCH
+    global PYAUTOTRADER_CSV_INPUT
+
+    env = os.environ.copy()
+    env['PYTHONPATH'] = os.path.join(PYAUTOTRADER_ROOT, "src")
+    env['VIRTUAL_ENV'] = "C:\\git\\216\\env"
+    os.chdir(os.path.join(PYAUTOTRADER_ROOT, "src", "pyautotrader"))
+
+    args = ["python.exe",
+            "__main__.py",
+            "aggregate_data_from_csv",
+            "--source",
+            os.path.join(PYAUTOTRADER_CSV_INPUT, "WDO$M5.csv"),
+            "--destination",
+            os.path.join(PYAUTOTRADER_CSV_INPUT, "WDO$M15.csv"),
+            "--timeframe",
+            "15Min"]
+
+    print(subprocess.run(args, env=env))
+
+    args = ["python.exe",
+            "__main__.py",
+            "aggregate_data_from_csv",
+            "--source",
+            os.path.join(PYAUTOTRADER_CSV_INPUT, "WDO$M5.csv"),
+            "--destination",
+            os.path.join(PYAUTOTRADER_CSV_INPUT, "WDO$M10.csv"),
+            "--timeframe",
+            "10Min"]
+
+    print(subprocess.run(args, env=env))
+
+
 if __name__ == '__main__':
     sanity_check()
     rename_old_files()
@@ -167,3 +204,4 @@ if __name__ == '__main__':
     process_daily_files()
     process_5Min_files()
     remove_old_files()
+    aggregate_files()
