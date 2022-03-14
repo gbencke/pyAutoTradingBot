@@ -1,3 +1,4 @@
+import sqlite3
 import sys
 import datetime
 import os
@@ -5,18 +6,8 @@ import glob
 import subprocess
 import pandas as pd
 
-PYAUTOTRADER_PROFITCHART_CSV_FOLDER = None
-PYAUTOTRADER_ROOT = None
-PYAUTOTRADER_CSV_INPUT_SEARCH = None
-PYAUTOTRADER_CSV_INPUT = None
-
 
 def sanity_check():
-    global PYAUTOTRADER_PROFITCHART_CSV_FOLDER
-    global PYAUTOTRADER_ROOT
-    global PYAUTOTRADER_CSV_INPUT_SEARCH
-    global PYAUTOTRADER_CSV_INPUT
-
     if 'PYAUTOTRADER_PROFITCHART_CSV_FOLDER' not in os.environ:
         print("You need to specify the PYAUTOTRADER_PROFITCHART_CSV_FOLDER environment variable to run the script...")
         sys.exit(-1)
@@ -41,25 +32,26 @@ def sanity_check():
         PYAUTOTRADER_ROOT, 'src', 'strategies', 'B3', 'WDOL', '00.data', 'input')
     PYAUTOTRADER_CSV_INPUT_SEARCH = os.path.join(
         PYAUTOTRADER_ROOT, 'src', 'strategies', 'B3', 'WDOL', '00.data', 'input', '*.csv')
+    PYAUTOTRADER_SQLITE_DB = os.path.join(
+        PYAUTOTRADER_ROOT, 'src', 'pyautotrader', 'data', 'pyautotrader.db')
+
+    return {
+        'PYAUTOTRADER_PROFITCHART_CSV_FOLDER': PYAUTOTRADER_PROFITCHART_CSV_FOLDER,
+        'PYAUTOTRADER_ROOT': PYAUTOTRADER_ROOT,
+        'PYAUTOTRADER_CSV_INPUT_SEARCH': PYAUTOTRADER_CSV_INPUT_SEARCH,
+        'PYAUTOTRADER_CSV_INPUT': PYAUTOTRADER_CSV_INPUT,
+        'PYAUTOTRADER_SQLITE_DB': PYAUTOTRADER_SQLITE_DB
+    }
 
 
-def rename_old_files():
-    global PYAUTOTRADER_PROFITCHART_CSV_FOLDER
-    global PYAUTOTRADER_ROOT
-    global PYAUTOTRADER_CSV_INPUT_SEARCH
-    global PYAUTOTRADER_CSV_INPUT
-
+def rename_old_files(PYAUTOTRADER_CSV_INPUT_SEARCH):
     for current_csv_file in glob.glob(PYAUTOTRADER_CSV_INPUT_SEARCH):
         if current_csv_file.endswith('.old.csv'):
-
             continue
         os.rename(current_csv_file, current_csv_file.replace('.csv', '.old.csv'))
 
 
-def check_if_old_files_exist():
-    global PYAUTOTRADER_PROFITCHART_CSV_FOLDER
-    global PYAUTOTRADER_ROOT
-    global PYAUTOTRADER_CSV_INPUT_SEARCH
+def check_if_old_files_exist(PYAUTOTRADER_CSV_INPUT):
     if not os.path.exists(os.path.join(PYAUTOTRADER_CSV_INPUT, 'WDO$Daily.old.csv')):
         print("Could not find the Daily quotes old file in the ProfitChart CSV files to import...")
         sys.exit(-1)
@@ -69,12 +61,7 @@ def check_if_old_files_exist():
         sys.exit(-1)
 
 
-def process_daily_files():
-    global PYAUTOTRADER_PROFITCHART_CSV_FOLDER
-    global PYAUTOTRADER_ROOT
-    global PYAUTOTRADER_CSV_INPUT_SEARCH
-    global PYAUTOTRADER_CSV_INPUT
-
+def process_daily_files(PYAUTOTRADER_PROFITCHART_CSV_FOLDER):
     pdDailyNewEntries = pd.read_csv(os.path.join(
         PYAUTOTRADER_PROFITCHART_CSV_FOLDER, 'WDOFUT_F_0_Diário.csv'),
         sep=';',
@@ -110,12 +97,7 @@ def process_daily_files():
         PYAUTOTRADER_CSV_INPUT, 'WDO$Daily.csv'), index=False)
 
 
-def process_5Min_files():
-    global PYAUTOTRADER_PROFITCHART_CSV_FOLDER
-    global PYAUTOTRADER_ROOT
-    global PYAUTOTRADER_CSV_INPUT_SEARCH
-    global PYAUTOTRADER_CSV_INPUT
-
+def process_5Min_files(PYAUTOTRADER_PROFITCHART_CSV_FOLDER):
     pdM5NewEntries = pd.read_csv(os.path.join(
         PYAUTOTRADER_PROFITCHART_CSV_FOLDER, 'WDOFUT_F_0_5min.csv'),
         sep=';',
@@ -151,22 +133,12 @@ def process_5Min_files():
         PYAUTOTRADER_CSV_INPUT, 'WDO$M5.csv'), index=False)
 
 
-def remove_old_files():
-    global PYAUTOTRADER_PROFITCHART_CSV_FOLDER
-    global PYAUTOTRADER_ROOT
-    global PYAUTOTRADER_CSV_INPUT_SEARCH
-    global PYAUTOTRADER_CSV_INPUT
-
+def remove_old_files(PYAUTOTRADER_CSV_INPUT):
     for current_csv_file in glob.glob(os.path.join(PYAUTOTRADER_CSV_INPUT, "*.old.csv")):
         os.unlink(current_csv_file)
 
 
-def aggregate_files():
-    global PYAUTOTRADER_PROFITCHART_CSV_FOLDER
-    global PYAUTOTRADER_ROOT
-    global PYAUTOTRADER_CSV_INPUT_SEARCH
-    global PYAUTOTRADER_CSV_INPUT
-
+def aggregate_files(PYAUTOTRADER_ROOT, PYAUTOTRADER_CSV_INPUT):
     env = os.environ.copy()
     env['PYTHONPATH'] = os.path.join(PYAUTOTRADER_ROOT, "src")
     env['VIRTUAL_ENV'] = "C:\\git\\216\\env"
@@ -182,7 +154,7 @@ def aggregate_files():
             "--timeframe",
             "15Min"]
 
-    print(subprocess.run(args, env=env))
+    subprocess.run(args, env=env)
 
     args = ["python.exe",
             "__main__.py",
@@ -194,14 +166,100 @@ def aggregate_files():
             "--timeframe",
             "10Min"]
 
-    print(subprocess.run(args, env=env))
+    subprocess.run(args, env=env)
+
+
+def clean_sqlite_db(PYAUTOTRADER_SQLITE_DB):
+    with sqlite3.connect(PYAUTOTRADER_SQLITE_DB) as con:
+        con.execute('delete from quotes')
+        con.commit()
+        con.execute('VACUUM')
+
+
+def populate_db(PYAUTOTRADER_ROOT, PYAUTOTRADER_CSV_INPUT):
+    env = os.environ.copy()
+    env['PYTHONPATH'] = os.path.join(PYAUTOTRADER_ROOT, "src")
+    env['VIRTUAL_ENV'] = "C:\\git\\216\\env"
+    os.chdir(os.path.join(PYAUTOTRADER_ROOT, "src", "pyautotrader"))
+
+    args = ["python.exe",
+            "__main__.py",
+            "import_data_from_csv",
+            "--sqlalchemy-connection-string",
+            "sqlite:///data//pyautotrader.db",
+            "--source",
+            os.path.join(PYAUTOTRADER_CSV_INPUT, "WDO$M5.csv"),
+            "--asset",
+            "WDOL",
+            "--exchange",
+            "B3",
+            "--timeframe",
+            "5Min"]
+
+    subprocess.run(args, env=env)
+
+    args = ["python.exe",
+            "__main__.py",
+            "import_data_from_csv",
+            "--sqlalchemy-connection-string",
+            "sqlite:///data//pyautotrader.db",
+            "--source",
+            os.path.join(PYAUTOTRADER_CSV_INPUT, "WDO$M10.csv"),
+            "--asset",
+            "WDOL",
+            "--exchange",
+            "B3",
+            "--timeframe",
+            "10Min"]
+
+    subprocess.run(args, env=env)
+
+    args = ["python.exe",
+            "__main__.py",
+            "import_data_from_csv",
+            "--sqlalchemy-connection-string",
+            "sqlite:///data//pyautotrader.db",
+            "--source",
+            os.path.join(PYAUTOTRADER_CSV_INPUT, "WDO$M15.csv"),
+            "--asset",
+            "WDOL",
+            "--exchange",
+            "B3",
+            "--timeframe",
+            "15Min"]
+
+    subprocess.run(args, env=env)
+
+    args = ["python.exe",
+            "__main__.py",
+            "import_data_from_csv",
+            "--sqlalchemy-connection-string",
+            "sqlite:///data//pyautotrader.db",
+            "--source",
+            os.path.join(PYAUTOTRADER_CSV_INPUT, "WDO$Daily.csv"),
+            "--asset",
+            "WDOL",
+            "--exchange",
+            "B3",
+            "--timeframe",
+            "Daily"]
+
+    subprocess.run(args, env=env)
 
 
 if __name__ == '__main__':
-    sanity_check()
-    rename_old_files()
-    rename_old_files()
-    process_daily_files()
-    process_5Min_files()
-    remove_old_files()
-    aggregate_files()
+    ret = sanity_check()
+    PYAUTOTRADER_PROFITCHART_CSV_FOLDER = ret['PYAUTOTRADER_PROFITCHART_CSV_FOLDER']
+    PYAUTOTRADER_ROOT = ret['PYAUTOTRADER_ROOT']
+    PYAUTOTRADER_CSV_INPUT_SEARCH = ret['PYAUTOTRADER_CSV_INPUT_SEARCH']
+    PYAUTOTRADER_CSV_INPUT = ret['PYAUTOTRADER_CSV_INPUT']
+    PYAUTOTRADER_SQLITE_DB = ret['PYAUTOTRADER_SQLITE_DB']
+
+    rename_old_files(PYAUTOTRADER_CSV_INPUT_SEARCH)
+    check_if_old_files_exist(PYAUTOTRADER_CSV_INPUT)
+    process_daily_files(PYAUTOTRADER_PROFITCHART_CSV_FOLDER)
+    process_5Min_files(PYAUTOTRADER_PROFITCHART_CSV_FOLDER)
+    remove_old_files(PYAUTOTRADER_CSV_INPUT)
+    aggregate_files(PYAUTOTRADER_ROOT, PYAUTOTRADER_CSV_INPUT)
+    clean_sqlite_db(PYAUTOTRADER_SQLITE_DB)
+    populate_db(PYAUTOTRADER_ROOT, PYAUTOTRADER_CSV_INPUT)
