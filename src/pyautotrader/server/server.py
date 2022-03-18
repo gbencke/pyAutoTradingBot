@@ -28,7 +28,8 @@ async def root():
 @app.get("/predict/{exchange}/{asset}/{timeframe}/{date}/{time}/")
 async def get_predict(exchange: str, asset: str, timeframe: str, date: str, time: str):
     global model
-    return get_predict_from_db(exchange, asset, timeframe, date, time, get_parameters((model)))
+    global engine
+    return get_predict_from_db(exchange, asset, timeframe, date, time, get_parameters((model)), engine)
 
 
 @app.get("/parameters/")
