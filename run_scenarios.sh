@@ -6,7 +6,7 @@ source ./clean_notebooks.sh
 
 export PYTHONPATH=$PWD/src
 
-set PYAUTOTRADER_ROOT=$PWD
+export PYAUTOTRADER_ROOT=$PWD
 
 cd src/pyautotrader
 
