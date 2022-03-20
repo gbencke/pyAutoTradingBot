@@ -54,7 +54,8 @@ async def post_quote(exchange: str, asset: str, timeframe: str, quote: Quote):
                             low=quote.low,
                             close=quote.close,
                             business=quote.business,
-                            volume=quote.volume)
+                            volume=quote.volume,
+                            datetime=((int(quote.date) * 10000 + int(quote.time))) - 201600000000)
 
     try:
         with Session(engine) as session:

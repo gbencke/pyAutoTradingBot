@@ -21,7 +21,8 @@ class QuoteORM(Base):
     close = Column(Integer, unique=False, nullable=False)
     business = Column(Integer, unique=False, nullable=False)
     volume = Column(Integer, unique=False, nullable=False)
+    datetime = Column(Integer, unique=False, nullable=False)
 
 
 Index('idx_quote', QuoteORM.exchange, QuoteORM.asset,
-      QuoteORM.timeframe, QuoteORM.date, QuoteORM.time, unique=True)
+      QuoteORM.timeframe, QuoteORM.datetime, unique=True)

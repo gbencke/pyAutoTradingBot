@@ -10,14 +10,12 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
             status_code=500, detail=f"ERROR! The requested data timeframe was {timeframe}, but the server is serving:{parameters['CURRENT_TIMEFRAME']} data")
 
     with Session(engine) as session:
+        final_datetime = ((int(date) * 10000) + int(time)) - 201600000000
         result = session.query(QuoteORM).filter(QuoteORM.exchange == exchange).filter(
-            QuoteORM.asset == asset).filter(QuoteORM.timeframe == timeframe).filter(QuoteORM.date <= date).order_by(desc(QuoteORM.date))
+            QuoteORM.asset == asset).filter(QuoteORM.timeframe == timeframe).filter(
+                QuoteORM.datetime <= final_datetime).order_by(desc(QuoteORM.datetime)).limit(300).all()
         res = []
-        final_datetime = int(date) * 1000 + int(time)
         for row in result:
-            if final_datetime < ((int(row.date) * 1000) + int(row.time)):
-                continue
-
             res.append({
                 'exchange': row.exchange,
                 'asset': row.asset,
@@ -31,8 +29,6 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
                 'business': row.business,
                 'volume': row.volume
             })
-            if len(res) == 500:
-                break
 
         session.commit()
 

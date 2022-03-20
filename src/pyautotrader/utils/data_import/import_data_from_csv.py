@@ -77,6 +77,8 @@ def import_data_from_csv(args):
                                         low=row['low'],
                                         close=row['close'],
                                         business=row['business'],
+                                        datetime=(
+                                            (quote.date * 10000 + quote.time)) - 201600000000,
                                         volume=row['volume'])
                 session.add(quote_to_add)
             except IntegrityError as ex:
