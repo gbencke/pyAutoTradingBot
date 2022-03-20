@@ -25,7 +25,7 @@ python ./generate_pnl_charts.py
 
 cd $PYAUTOTRADER_ROOT
 
-cd ../strategies/B3/WDOL/00.data/
+cd src/strategies/B3/WDOL/00.data/
 
 export strategy7z="$(date '+%Y%m%d%H%M%S').strategies.7z"
 
