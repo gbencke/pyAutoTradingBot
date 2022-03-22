@@ -10,3 +10,5 @@ jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace .\src\strateg
 
 jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace .\src\strategies\B3\WDOL\02.candle_strategy\02.candle_strategy_0400_forward_testing.ipynb
 
+jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace .\src\strategies\B3\WDOL\02.candle_strategy\02.candle_strategy_0500_check_predict.ipynb
+
