@@ -73,7 +73,7 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
         final_datetime = ((int(date) * 10000) + int(time)) - 201600000000
         result = session.query(QuoteORM).filter(QuoteORM.exchange == exchange).filter(
             QuoteORM.asset == asset).filter(QuoteORM.timeframe == timeframe).filter(
-                QuoteORM.datetime <= final_datetime).order_by(desc(QuoteORM.datetime)).limit(300).all()
+                QuoteORM.datetime <= final_datetime).order_by(desc(QuoteORM.datetime)).limit(1000).all()
         data5Min = []
         for row in result:
             data5Min.append({
@@ -128,6 +128,10 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
     csv_5Min['ema144'] = csv_5Min.ta.ema(length=144)
     csv_5Min['ema233'] = csv_5Min.ta.ema(length=233)
     csv_5Min['vwap'] = csv_5Min.ta.vwap()
+
+    test_data = os.path.join(DATA_OUTPUT_DIR, 'saida_test_data.xlsx')
+
+    csv_5Min.to_excel(test_data)
 
     data_daily = csv_Daily.to_dict('records')
     data_5min = csv_5Min.to_dict('records')
@@ -259,8 +263,8 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
     current_bar['x1_low_real'] = data_5min[index-10]['low']
     current_bar['x1_close_real'] = data_5min[index-10]['close']
     current_bar['x1_height'] = current_bar['x1_high'] - current_bar['x1_low']
-    current_bar['x1_body'] = max([current_bar['x1_open_real'],  current_bar['x1_close_real']]) / min(
-        [current_bar['x1_open_real'],  current_bar['x1_close_real']]) * 100
+    current_bar['x1_body'] = ((max([current_bar['x1_open_real'],  current_bar['x1_close_real']]) /
+                              min([current_bar['x1_open_real'],  current_bar['x1_close_real']])) - 1) * 100
     current_bar['x1_roc'] = (
         (current_bar['x1_open_real'] / current_bar['x1_close_real']) - 1) * 100
     current_bar['x1_previous_high'] = (
@@ -320,8 +324,8 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
     current_bar['x2_low_real'] = data_5min[index-9]['low']
     current_bar['x2_close_real'] = data_5min[index-9]['close']
     current_bar['x2_height'] = current_bar['x2_high'] - current_bar['x2_low']
-    current_bar['x2_body'] = max([current_bar['x2_open_real'],  current_bar['x2_close_real']]) / min(
-        [current_bar['x2_open_real'],  current_bar['x2_close_real']]) * 100
+    current_bar['x2_body'] = ((max([current_bar['x2_open_real'],  current_bar['x2_close_real']]) /
+                              min([current_bar['x2_open_real'],  current_bar['x2_close_real']])) - 1) * 100
     current_bar['x2_roc'] = (
         (current_bar['x2_open_real'] / current_bar['x2_close_real']) - 1) * 100
     current_bar['x2_previous_high'] = (
@@ -381,8 +385,8 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
     current_bar['x3_low_real'] = data_5min[index-8]['low']
     current_bar['x3_close_real'] = data_5min[index-8]['close']
     current_bar['x3_height'] = current_bar['x3_high'] - current_bar['x3_low']
-    current_bar['x3_body'] = max([current_bar['x3_open_real'],  current_bar['x3_close_real']]) / min(
-        [current_bar['x3_open_real'],  current_bar['x3_close_real']]) * 100
+    current_bar['x3_body'] = ((max([current_bar['x3_open_real'],  current_bar['x3_close_real']]) /
+                              min([current_bar['x3_open_real'],  current_bar['x3_close_real']])) - 1) * 100
     current_bar['x3_roc'] = (
         (current_bar['x3_open_real'] / current_bar['x3_close_real']) - 1) * 100
     current_bar['x3_previous_high'] = (
@@ -442,8 +446,8 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
     current_bar['x4_low_real'] = data_5min[index-7]['low']
     current_bar['x4_close_real'] = data_5min[index-7]['close']
     current_bar['x4_height'] = current_bar['x4_high'] - current_bar['x4_low']
-    current_bar['x4_body'] = max([current_bar['x4_open_real'],  current_bar['x4_close_real']]) / min(
-        [current_bar['x4_open_real'],  current_bar['x4_close_real']]) * 100
+    current_bar['x4_body'] = ((max([current_bar['x4_open_real'],  current_bar['x4_close_real']]) /
+                              min([current_bar['x4_open_real'],  current_bar['x4_close_real']])) - 1) * 100
     current_bar['x4_roc'] = (
         (current_bar['x4_open_real'] / current_bar['x4_close_real']) - 1) * 100
     current_bar['x4_previous_high'] = (
@@ -503,8 +507,8 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
     current_bar['x5_low_real'] = data_5min[index-6]['low']
     current_bar['x5_close_real'] = data_5min[index-6]['close']
     current_bar['x5_height'] = current_bar['x5_high'] - current_bar['x5_low']
-    current_bar['x5_body'] = max([current_bar['x5_open_real'],  current_bar['x5_close_real']]) / min(
-        [current_bar['x5_open_real'],  current_bar['x5_close_real']]) * 100
+    current_bar['x5_body'] = ((max([current_bar['x5_open_real'],  current_bar['x5_close_real']]) /
+                              min([current_bar['x5_open_real'],  current_bar['x5_close_real']])) - 1) * 100
     current_bar['x5_roc'] = (
         (current_bar['x5_open_real'] / current_bar['x5_close_real']) - 1) * 100
     current_bar['x5_previous_high'] = (
@@ -564,8 +568,8 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
     current_bar['x6_low_real'] = data_5min[index-5]['low']
     current_bar['x6_close_real'] = data_5min[index-5]['close']
     current_bar['x6_height'] = current_bar['x6_high'] - current_bar['x6_low']
-    current_bar['x6_body'] = max([current_bar['x6_open_real'],  current_bar['x6_close_real']]) / \
-        min([current_bar['x6_open_real'],  current_bar['x6_close_real']])
+    current_bar['x6_body'] = ((max([current_bar['x6_open_real'],  current_bar['x6_close_real']]) /
+                              min([current_bar['x6_open_real'],  current_bar['x6_close_real']])) - 1) * 100
     current_bar['x6_roc'] = (
         (current_bar['x6_open_real'] / current_bar['x6_close_real']) - 1) * 100
     current_bar['x6_previous_high'] = (
@@ -625,8 +629,8 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
     current_bar['x7_low_real'] = data_5min[index-4]['low']
     current_bar['x7_close_real'] = data_5min[index-4]['close']
     current_bar['x7_height'] = current_bar['x7_high'] - current_bar['x7_low']
-    current_bar['x7_body'] = max([current_bar['x7_open_real'],  current_bar['x7_close_real']]) / min(
-        [current_bar['x7_open_real'],  current_bar['x7_close_real']]) * 100
+    current_bar['x7_body'] = ((max([current_bar['x7_open_real'],  current_bar['x7_close_real']]) /
+                              min([current_bar['x7_open_real'],  current_bar['x7_close_real']])) - 1) * 100
     current_bar['x7_roc'] = (
         (current_bar['x7_open_real'] / current_bar['x7_close_real']) - 1) * 100
     current_bar['x7_previous_high'] = (
@@ -686,8 +690,8 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
     current_bar['x8_low_real'] = data_5min[index-3]['low']
     current_bar['x8_close_real'] = data_5min[index-3]['close']
     current_bar['x8_height'] = current_bar['x8_high'] - current_bar['x8_low']
-    current_bar['x8_body'] = max([current_bar['x8_open_real'],  current_bar['x8_close_real']]) / min(
-        [current_bar['x8_open_real'],  current_bar['x8_close_real']]) * 100
+    current_bar['x8_body'] = ((max([current_bar['x8_open_real'],  current_bar['x8_close_real']]) /
+                              min([current_bar['x8_open_real'],  current_bar['x8_close_real']])) - 1) * 100
     current_bar['x8_roc'] = (
         (current_bar['x8_open_real'] / current_bar['x8_close_real']) - 1) * 100
     current_bar['x8_previous_high'] = (
@@ -747,8 +751,8 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
     current_bar['x9_low_real'] = data_5min[index-2]['low']
     current_bar['x9_close_real'] = data_5min[index-2]['close']
     current_bar['x9_height'] = current_bar['x9_high'] - current_bar['x9_low']
-    current_bar['x9_body'] = max([current_bar['x9_open_real'],  current_bar['x9_close_real']]) / min(
-        [current_bar['x9_open_real'],  current_bar['x9_close_real']]) * 100
+    current_bar['x9_body'] = ((max([current_bar['x9_open_real'],  current_bar['x9_close_real']]) /
+                              min([current_bar['x9_open_real'],  current_bar['x9_close_real']])) - 1) * 100
     current_bar['x9_roc'] = (
         (current_bar['x9_open_real'] / current_bar['x9_close_real']) - 1) * 100
     current_bar['x9_previous_high'] = (
@@ -809,8 +813,8 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
     current_bar['x10_close_real'] = data_5min[index-1]['close']
     current_bar['x10_height'] = current_bar['x10_high'] - \
         current_bar['x10_low']
-    current_bar['x10_body'] = max([current_bar['x10_open_real'],  current_bar['x10_close_real']]) / min(
-        [current_bar['x10_open_real'],  current_bar['x10_close_real']]) * 100
+    current_bar['x10_body'] = ((max([current_bar['x10_open_real'],  current_bar['x10_close_real']]) /
+                               min([current_bar['x10_open_real'],  current_bar['x10_close_real']])) - 1) * 100
     current_bar['x10_roc'] = (
         (current_bar['x10_open_real'] / current_bar['x10_close_real']) - 1) * 100
     current_bar['x10_previous_high'] = (
@@ -871,8 +875,8 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
     current_bar['x11_close_real'] = data_5min[index]['close']
     current_bar['x11_height'] = current_bar['x11_high'] - \
         current_bar['x11_low']
-    current_bar['x11_body'] = max([current_bar['x11_open_real'],  current_bar['x11_close_real']]) / min(
-        [current_bar['x11_open_real'],  current_bar['x11_close_real']]) * 100
+    current_bar['x11_body'] = ((max([current_bar['x11_open_real'],  current_bar['x11_close_real']]) /
+                               min([current_bar['x11_open_real'],  current_bar['x11_close_real']])) - 1) * 100
     current_bar['x11_roc'] = (
         (current_bar['x11_open_real'] / current_bar['x11_close_real']) - 1) * 100
     current_bar['x11_previous_high'] = (
@@ -922,6 +926,10 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
         lambda row: predict_long(row, parameters), axis=1)
 
     ret_dict = df_current_total_dataset.to_dict('records')
+
+    test_predict = os.path.join(DATA_OUTPUT_DIR, 'saida_test_predict.xlsx')
+
+    df_current_total_dataset.to_excel(test_predict)
 
     predict = {
         'short_predict': ret_dict[0]['short_predict'],
