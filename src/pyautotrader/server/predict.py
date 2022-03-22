@@ -13,6 +13,7 @@ from pyautotrader.models.entities import QuoteORM
 model_to_use = None
 best_short_booster = None
 best_long_booster = None
+predict_cache = {}
 
 
 def get_slope(current_bar, value_to_calculate):
@@ -58,10 +59,15 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
     global model_to_use
     global best_short_booster
     global best_long_booster
+    global predict_cache
 
     if parameters['CURRENT_TIMEFRAME'] != timeframe:
         raise HTTPException(
             status_code=500, detail=f"ERROR! The requested data timeframe was {timeframe}, but the server is serving:{parameters['CURRENT_TIMEFRAME']} data")
+
+    predict_key = f'{exchange}.{asset}.{timeframe}.{date}.{time}'
+    if predict_key in predict_cache:
+        return predict_cache[predict_key]
 
     with Session(engine) as session:
         final_datetime = ((int(date) * 10000) + int(time)) - 201600000000
@@ -917,6 +923,9 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
 
     ret_dict = df_current_total_dataset.to_dict('records')
 
-    return {
+    predict = {
         'short_predict': ret_dict[0]['short_predict'],
         'long_predict': ret_dict[0]['long_predict']}
+
+    predict_cache[predict_key] = predict
+    return predict
