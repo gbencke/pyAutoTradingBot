@@ -3,6 +3,7 @@ import sys
 import time
 import glob
 import shutil
+import numpy as np
 import pandas as pd
 import matplotlib
 import matplotlib.pyplot
@@ -75,7 +76,10 @@ def generate_pnl_charts(PYAUTOTRADER_STRATEGIES_FOLDER, PYAUTOTRADER_STRATEGIES_
         trades = []
         counter = 0
         for current_trade in test_trades_path:
-            sum += current_trade['result']
+            if np.isnan(current_trade['result']):
+                sum += 0
+            else:
+                sum += current_trade['result']
             trades.append(
                 {'Counter': counter, 'DateTime': str(current_trade['Date']), 'Total': sum})
             counter += 1
