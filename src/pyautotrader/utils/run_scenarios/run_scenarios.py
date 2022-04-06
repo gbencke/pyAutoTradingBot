@@ -3,6 +3,7 @@ import sys
 import papermill as pm
 import pandas as pd
 import joblib
+import shutil
 from datetime import datetime
 
 
@@ -74,25 +75,43 @@ def summarize():
     pd.DataFrame(strategies_run).to_excel(final_excel_summary)
 
 
-def run_notebook():
+def run_notebook(first):
     current_date = datetime.now().strftime("%Y%m%d%H%M%S")
 
     current_folder = os.path.join(
         os.getcwd(), '..', 'strategies', 'B3', 'WDOL', '02.candle_strategy')
     current_strategies = os.path.join(
         os.getcwd(), '..', 'strategies', 'B3', 'WDOL', '00.data', 'strategies')
+    current_cache = os.path.join(
+        os.getcwd(), '..', 'strategies', 'B3', 'WDOL', '00.data', 'strategies', 'cache')
 
     os.mkdir(os.path.join(current_strategies, current_date))
     current_strategies = os.path.join(current_strategies, current_date)
 
     os.environ["DATA_OUTPUT_DIR"] = current_strategies
 
-    input_notebook = os.path.join(
-        current_folder, '02.candle_strategy_0100_create_dataframe.ipynb')
-    output_notebook = os.path.join(
-        current_strategies, '02.candle_strategy_0100_create_dataframe.executed.ipynb')
+    if first:
+        input_notebook = os.path.join(
+            current_folder, '02.candle_strategy_0100_create_dataframe.ipynb')
+        output_notebook = os.path.join(
+            current_strategies, '02.candle_strategy_0100_create_dataframe.executed.ipynb')
 
-    pm.execute_notebook(input_notebook, output_notebook)
+        pm.execute_notebook(input_notebook, output_notebook)
+
+        if not os.path.exists(current_cache):
+            os.mkdir(current_cache)
+
+        for f in os.listdir(current_cache):
+            os.remove(os.path.join(current_cache, f))
+
+        for f in os.listdir(current_strategies):
+            shutil.copyfile(os.path.join(current_strategies, f),
+                            os.path.join(current_cache, f))
+
+    else:
+        for f in os.listdir(current_cache):
+            shutil.copyfile(os.path.join(current_cache, f),
+                            os.path.join(current_strategies, f))
 
     input_notebook = os.path.join(
         current_folder, '02.candle_strategy_0200_create_xgbooster.ipynb')
@@ -125,5 +144,7 @@ def run_scenarios(args):
 
     os.environ["DATA_INPUT_DIR"] = os.path.join(
         os.getcwd(), '..', 'strategies', 'B3', 'WDOL', '00.data', 'input')
+    first = True
     for current_interaction in range(MINIMUM_INTERACTIONS):
-        run_notebook()
+        run_notebook(first)
+        first = False
