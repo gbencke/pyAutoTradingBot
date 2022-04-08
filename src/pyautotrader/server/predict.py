@@ -60,7 +60,7 @@ def get_predict_data_from_db(exchange, asset, timeframe, date, time, parameters,
         final_datetime = ((int(date) * 10000) + int(time)) - 201600000000
         result = session.query(QuoteORM).filter(QuoteORM.exchange == exchange).filter(
             QuoteORM.asset == asset).filter(QuoteORM.timeframe == timeframe).filter(
-                QuoteORM.datetime <= final_datetime).order_by(desc(QuoteORM.datetime)).limit(250).all()
+                QuoteORM.datetime <= final_datetime).order_by(desc(QuoteORM.datetime)).limit(1000).all()
         data5Min = []
         for row in result:
             data5Min.append({
