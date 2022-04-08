@@ -120,7 +120,7 @@ def calculate_ta(csv_5Min):
     return csv_5Min
 
 
-def calculate_predict(generated_bars, parameters):
+def calculate_predict(generated_bars, parameters, data_5min):
     df_current_total_dataset = pd.DataFrame(generated_bars)
     df_current_total_dataset['short_predict'] = df_current_total_dataset.apply(
         lambda row: predict_short(row, parameters), axis=1)
@@ -129,53 +129,7 @@ def calculate_predict(generated_bars, parameters):
     return df_current_total_dataset
 
 
-def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engine, DATA_OUTPUT_DIR):
-    global model_to_use
-    global best_short_booster
-    global best_long_booster
-    global predict_cache
-
-    if parameters['CURRENT_TIMEFRAME'] != timeframe:
-        raise HTTPException(
-            status_code=500, detail=f"ERROR! The requested data timeframe was {timeframe}, but the server is serving:{parameters['CURRENT_TIMEFRAME']} data")
-
-    predict_key = f'{exchange}.{asset}.{timeframe}.{date}.{time}'
-    if predict_key in predict_cache:
-        return predict_cache[predict_key]
-
-    csv_5Min, csv_Daily = get_predict_data_from_db(
-        exchange, asset, timeframe, date, time, parameters, engine, DATA_OUTPUT_DIR)
-
-    generated_bars = []
-
-    csv_5Min = calculate_ta(csv_5Min)
-
-    if DATA_OUTPUT_DIR is not None and False:
-        test_data = os.path.join(DATA_OUTPUT_DIR, 'saida_test_data.xlsx')
-        csv_5Min.to_excel(test_data)
-
-    data_daily = csv_Daily.to_dict('records')
-    data_5min = csv_5Min.to_dict('records')
-
-    daily_dates = []
-    ohlc_daily = {}
-
-    index = len(data_5min) - 1
-
-    for current_date in data_daily:
-        ohlc_daily[current_date['date']] = current_date
-        daily_dates.append(current_date['date'])
-
-    current_date = data_5min[index]['date']
-    current_time = data_5min[index]['time']
-
-    current_open = data_5min[index]['open']
-    current_volume = data_5min[index]['volume']
-
-    previous_date = [x for x in daily_dates if x < current_date]
-    previous_date = previous_date[len(previous_date)-1]
-    previous_date = ohlc_daily[previous_date]
-
+def generate_bars(current_open, current_date, current_time, previous_date, data_5min, index, current_volume):
     current_bar = {}
 
     current_bar['current_open'] = current_open
@@ -970,14 +924,64 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
     current_bar['current_pos'] = current_bar['x11_close']
     current_bar['current_date'] = current_date
 
-    generated_bars.append(current_bar)
+    return [current_bar]
+
+
+def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engine, DATA_OUTPUT_DIR):
+    global model_to_use
+    global best_short_booster
+    global best_long_booster
+    global predict_cache
+
+    if parameters['CURRENT_TIMEFRAME'] != timeframe:
+        raise HTTPException(
+            status_code=500, detail=f"ERROR! The requested data timeframe was {timeframe}, but the server is serving:{parameters['CURRENT_TIMEFRAME']} data")
+
+    predict_key = f'{exchange}.{asset}.{timeframe}.{date}.{time}'
+    if predict_key in predict_cache:
+        return predict_cache[predict_key]
+
+    csv_5Min, csv_Daily = get_predict_data_from_db(
+        exchange, asset, timeframe, date, time, parameters, engine, DATA_OUTPUT_DIR)
+
+    csv_5Min = calculate_ta(csv_5Min)
+
+    if DATA_OUTPUT_DIR is not None and False:
+        test_data = os.path.join(DATA_OUTPUT_DIR, 'saida_test_data.xlsx')
+        csv_5Min.to_excel(test_data)
+
+    data_daily = csv_Daily.to_dict('records')
+    data_5min = csv_5Min.to_dict('records')
+
+    daily_dates = []
+    ohlc_daily = {}
+
+    index = len(data_5min) - 1
+
+    for current_date in data_daily:
+        ohlc_daily[current_date['date']] = current_date
+        daily_dates.append(current_date['date'])
+
+    current_date = data_5min[index]['date']
+    current_time = data_5min[index]['time']
+
+    current_open = data_5min[index]['open']
+    current_volume = data_5min[index]['volume']
+
+    previous_date = [x for x in daily_dates if x < current_date]
+    previous_date = previous_date[len(previous_date)-1]
+    previous_date = ohlc_daily[previous_date]
+
+    generated_bars = generate_bars(
+        current_open, current_date, current_time, previous_date, data_5min, index, current_volume)
 
     if model_to_use is None:
         model_to_use = return_first_model(DATA_OUTPUT_DIR)
         best_short_booster = joblib.load(model_to_use['xgboostshortmodel'])
         best_long_booster = joblib.load(model_to_use['xgboostlongmodel'])
 
-    df_current_total_dataset = calculate_predict(generated_bars, parameters)
+    df_current_total_dataset = calculate_predict(
+        generated_bars, parameters, data_5min)
 
     ret_dict = df_current_total_dataset.to_dict('records')
 
