@@ -933,14 +933,6 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
     global best_long_booster
     global predict_cache
 
-    if parameters['CURRENT_TIMEFRAME'] != timeframe:
-        raise HTTPException(
-            status_code=500, detail=f"ERROR! The requested data timeframe was {timeframe}, but the server is serving:{parameters['CURRENT_TIMEFRAME']} data")
-
-    predict_key = f'{exchange}.{asset}.{timeframe}.{date}.{time}'
-    if predict_key in predict_cache:
-        return predict_cache[predict_key]
-
     csv_5Min, csv_Daily = get_predict_data_from_db(
         exchange, asset, timeframe, date, time, parameters, engine, DATA_OUTPUT_DIR)
 
@@ -974,6 +966,26 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
 
     generated_bars = generate_bars(
         current_open, current_date, current_time, previous_date, data_5min, index, current_volume)
+
+    return data_5min, generated_bars
+
+
+def get_predict(exchange, asset, timeframe, date, time, parameters, engine, DATA_OUTPUT_DIR):
+    global model_to_use
+    global best_short_booster
+    global best_long_booster
+    global predict_cache
+
+    if parameters['CURRENT_TIMEFRAME'] != timeframe:
+        raise HTTPException(
+            status_code=500, detail=f"ERROR! The requested data timeframe was {timeframe}, but the server is serving:{parameters['CURRENT_TIMEFRAME']} data")
+
+    predict_key = f'{exchange}.{asset}.{timeframe}.{date}.{time}'
+    if predict_key in predict_cache:
+        return predict_cache[predict_key]
+
+    data_5min, generated_bars = get_predict_from_db(
+        exchange, asset, timeframe, date, time, parameters, engine, DATA_OUTPUT_DIR)
 
     if model_to_use is None:
         model_to_use = return_first_model(DATA_OUTPUT_DIR)

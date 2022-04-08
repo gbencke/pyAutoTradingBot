@@ -12,7 +12,7 @@ from sqlalchemy.exc import IntegrityError
 
 from .value_objects import Quote
 from .parameters import get_parameters
-from .predict import get_predict_from_db
+from .predict import get_predict as get_predict_db
 from pyautotrader.models.entities import QuoteORM
 
 app = FastAPI()
@@ -29,7 +29,7 @@ async def root():
 async def get_predict(exchange: str, asset: str, timeframe: str, date: str, time: str):
     global model
     global engine
-    return get_predict_from_db(exchange, asset, timeframe, date, time, get_parameters((model)), engine, model)
+    return get_predict_db(exchange, asset, timeframe, date, time, get_parameters((model)), engine, model)
 
 
 @app.get("/parameters/")
