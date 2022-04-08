@@ -55,25 +55,12 @@ def return_first_model(DATA_OUTPUT_DIR):
     return models_found[list(models_found.keys())[0]]
 
 
-def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engine, DATA_OUTPUT_DIR):
-    global model_to_use
-    global best_short_booster
-    global best_long_booster
-    global predict_cache
-
-    if parameters['CURRENT_TIMEFRAME'] != timeframe:
-        raise HTTPException(
-            status_code=500, detail=f"ERROR! The requested data timeframe was {timeframe}, but the server is serving:{parameters['CURRENT_TIMEFRAME']} data")
-
-    predict_key = f'{exchange}.{asset}.{timeframe}.{date}.{time}'
-    if predict_key in predict_cache:
-        return predict_cache[predict_key]
-
+def get_predict_data_from_db(exchange, asset, timeframe, date, time, parameters, engine, DATA_OUTPUT_DIR):
     with Session(engine) as session:
         final_datetime = ((int(date) * 10000) + int(time)) - 201600000000
         result = session.query(QuoteORM).filter(QuoteORM.exchange == exchange).filter(
             QuoteORM.asset == asset).filter(QuoteORM.timeframe == timeframe).filter(
-                QuoteORM.datetime <= final_datetime).order_by(desc(QuoteORM.datetime)).limit(1000).all()
+                QuoteORM.datetime <= final_datetime).order_by(desc(QuoteORM.datetime)).limit(250).all()
         data5Min = []
         for row in result:
             data5Min.append({
@@ -117,8 +104,10 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
     csv_5Min = pd.DataFrame(data5Min)
     csv_Daily = pd.DataFrame(dataDaily)
 
-    generated_bars = []
+    return csv_5Min, csv_Daily
 
+
+def calculate_ta(csv_5Min):
     csv_5Min['datetime'] = csv_5Min.apply(lambda x: datetime.strptime(
         str(x['date']) + ' ' + str(x['time']), '%Y%m%d %H%M'), axis=1)
     csv_5Min.set_index(pd.DatetimeIndex(csv_5Min["datetime"]), inplace=True)
@@ -128,6 +117,38 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
     csv_5Min['ema144'] = csv_5Min.ta.ema(length=144)
     csv_5Min['ema233'] = csv_5Min.ta.ema(length=233)
     csv_5Min['vwap'] = csv_5Min.ta.vwap()
+    return csv_5Min
+
+
+def calculate_predict(generated_bars, parameters):
+    df_current_total_dataset = pd.DataFrame(generated_bars)
+    df_current_total_dataset['short_predict'] = df_current_total_dataset.apply(
+        lambda row: predict_short(row, parameters), axis=1)
+    df_current_total_dataset['long_predict'] = df_current_total_dataset.apply(
+        lambda row: predict_long(row, parameters), axis=1)
+    return df_current_total_dataset
+
+
+def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engine, DATA_OUTPUT_DIR):
+    global model_to_use
+    global best_short_booster
+    global best_long_booster
+    global predict_cache
+
+    if parameters['CURRENT_TIMEFRAME'] != timeframe:
+        raise HTTPException(
+            status_code=500, detail=f"ERROR! The requested data timeframe was {timeframe}, but the server is serving:{parameters['CURRENT_TIMEFRAME']} data")
+
+    predict_key = f'{exchange}.{asset}.{timeframe}.{date}.{time}'
+    if predict_key in predict_cache:
+        return predict_cache[predict_key]
+
+    csv_5Min, csv_Daily = get_predict_data_from_db(
+        exchange, asset, timeframe, date, time, parameters, engine, DATA_OUTPUT_DIR)
+
+    generated_bars = []
+
+    csv_5Min = calculate_ta(csv_5Min)
 
     if DATA_OUTPUT_DIR is not None and False:
         test_data = os.path.join(DATA_OUTPUT_DIR, 'saida_test_data.xlsx')
@@ -212,7 +233,7 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
                               min([current_bar['x0_open_real'],  current_bar['x0_close_real']])) - 1) * 100
     if current_bar['x0_open'] > current_bar['x0_close']:
         current_bar['x0_height'] *= -1
-        current_bar['x0_body'] *= -1    
+        current_bar['x0_body'] *= -1
     current_bar['x0_roc'] = (
         (current_bar['x0_open_real'] / current_bar['x0_close_real']) - 1) * 100
     current_bar['x0_previous_high'] = (
@@ -270,7 +291,7 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
                               min([current_bar['x1_open_real'],  current_bar['x1_close_real']])) - 1) * 100
     if current_bar['x1_open'] > current_bar['x1_close']:
         current_bar['x1_height'] *= -1
-        current_bar['x1_body'] *= -1    
+        current_bar['x1_body'] *= -1
     current_bar['x1_roc'] = (
         (current_bar['x1_open_real'] / current_bar['x1_close_real']) - 1) * 100
     current_bar['x1_previous_high'] = (
@@ -334,7 +355,7 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
                               min([current_bar['x2_open_real'],  current_bar['x2_close_real']])) - 1) * 100
     if current_bar['x2_open'] > current_bar['x2_close']:
         current_bar['x2_height'] *= -1
-        current_bar['x2_body'] *= -1    
+        current_bar['x2_body'] *= -1
     current_bar['x2_roc'] = (
         (current_bar['x2_open_real'] / current_bar['x2_close_real']) - 1) * 100
     current_bar['x2_previous_high'] = (
@@ -398,7 +419,7 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
                               min([current_bar['x3_open_real'],  current_bar['x3_close_real']])) - 1) * 100
     if current_bar['x3_open'] > current_bar['x3_close']:
         current_bar['x3_height'] *= -1
-        current_bar['x3_body'] *= -1    
+        current_bar['x3_body'] *= -1
     current_bar['x3_roc'] = (
         (current_bar['x3_open_real'] / current_bar['x3_close_real']) - 1) * 100
     current_bar['x3_previous_high'] = (
@@ -462,7 +483,7 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
                               min([current_bar['x4_open_real'],  current_bar['x4_close_real']])) - 1) * 100
     if current_bar['x4_open'] > current_bar['x4_close']:
         current_bar['x4_height'] *= -1
-        current_bar['x4_body'] *= -1    
+        current_bar['x4_body'] *= -1
     current_bar['x4_roc'] = (
         (current_bar['x4_open_real'] / current_bar['x4_close_real']) - 1) * 100
     current_bar['x4_previous_high'] = (
@@ -527,7 +548,7 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
 
     if current_bar['x5_open'] > current_bar['x5_close']:
         current_bar['x5_height'] *= -1
-        current_bar['x5_body'] *= -1    
+        current_bar['x5_body'] *= -1
     current_bar['x5_roc'] = (
         (current_bar['x5_open_real'] / current_bar['x5_close_real']) - 1) * 100
     current_bar['x5_previous_high'] = (
@@ -591,7 +612,7 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
                               min([current_bar['x6_open_real'],  current_bar['x6_close_real']])) - 1) * 100
     if current_bar['x6_open'] > current_bar['x6_close']:
         current_bar['x6_height'] *= -1
-        current_bar['x6_body'] *= -1    
+        current_bar['x6_body'] *= -1
     current_bar['x6_roc'] = (
         (current_bar['x6_open_real'] / current_bar['x6_close_real']) - 1) * 100
     current_bar['x6_previous_high'] = (
@@ -655,7 +676,7 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
                               min([current_bar['x7_open_real'],  current_bar['x7_close_real']])) - 1) * 100
     if current_bar['x7_open'] > current_bar['x7_close']:
         current_bar['x7_height'] *= -1
-        current_bar['x7_body'] *= -1    
+        current_bar['x7_body'] *= -1
     current_bar['x7_roc'] = (
         (current_bar['x7_open_real'] / current_bar['x7_close_real']) - 1) * 100
     current_bar['x7_previous_high'] = (
@@ -719,7 +740,7 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
                               min([current_bar['x8_open_real'],  current_bar['x8_close_real']])) - 1) * 100
     if current_bar['x8_open'] > current_bar['x8_close']:
         current_bar['x8_height'] *= -1
-        current_bar['x8_body'] *= -1    
+        current_bar['x8_body'] *= -1
     current_bar['x8_roc'] = (
         (current_bar['x8_open_real'] / current_bar['x8_close_real']) - 1) * 100
     current_bar['x8_previous_high'] = (
@@ -783,7 +804,7 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
                               min([current_bar['x9_open_real'],  current_bar['x9_close_real']])) - 1) * 100
     if current_bar['x9_open'] > current_bar['x9_close']:
         current_bar['x9_height'] *= -1
-        current_bar['x9_body'] *= -1    
+        current_bar['x9_body'] *= -1
     current_bar['x9_roc'] = (
         (current_bar['x9_open_real'] / current_bar['x9_close_real']) - 1) * 100
     current_bar['x9_previous_high'] = (
@@ -848,7 +869,7 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
                                min([current_bar['x10_open_real'],  current_bar['x10_close_real']])) - 1) * 100
     if current_bar['x10_open'] > current_bar['x10_close']:
         current_bar['x10_height'] *= -1
-        current_bar['x10_body'] *= -1    
+        current_bar['x10_body'] *= -1
     current_bar['x10_roc'] = (
         (current_bar['x10_open_real'] / current_bar['x10_close_real']) - 1) * 100
     current_bar['x10_previous_high'] = (
@@ -913,7 +934,7 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
                                min([current_bar['x11_open_real'],  current_bar['x11_close_real']])) - 1) * 100
     if current_bar['x11_open'] > current_bar['x11_close']:
         current_bar['x11_height'] *= -1
-        current_bar['x11_body'] *= -1    
+        current_bar['x11_body'] *= -1
     current_bar['x11_roc'] = (
         (current_bar['x11_open_real'] / current_bar['x11_close_real']) - 1) * 100
     current_bar['x11_previous_high'] = (
@@ -956,11 +977,7 @@ def get_predict_from_db(exchange, asset, timeframe, date, time, parameters, engi
         best_short_booster = joblib.load(model_to_use['xgboostshortmodel'])
         best_long_booster = joblib.load(model_to_use['xgboostlongmodel'])
 
-    df_current_total_dataset = pd.DataFrame(generated_bars)
-    df_current_total_dataset['short_predict'] = df_current_total_dataset.apply(
-        lambda row: predict_short(row, parameters), axis=1)
-    df_current_total_dataset['long_predict'] = df_current_total_dataset.apply(
-        lambda row: predict_long(row, parameters), axis=1)
+    df_current_total_dataset = calculate_predict(generated_bars, parameters)
 
     ret_dict = df_current_total_dataset.to_dict('records')
 
