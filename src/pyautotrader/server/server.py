@@ -6,6 +6,7 @@ import json
 import joblib
 
 from fastapi import FastAPI, HTTPException
+from fastapi import Response, status
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
@@ -39,7 +40,7 @@ async def parameters():
 
 
 @app.post("/quotes/{exchange}/{asset}/{timeframe}/")
-async def post_quote(exchange: str, asset: str, timeframe: str, quote: Quote):
+async def post_quote(exchange: str, asset: str, timeframe: str, quote: Quote, response: Response):
     if timeframe not in ['5Min', '15Min', '30Min', '60Min', 'Daily']:
         raise HTTPException(
             status_code=400, detail='timeframe should be:5Min, 15Min, 30Min, 60Min, Daily')
@@ -61,8 +62,10 @@ async def post_quote(exchange: str, asset: str, timeframe: str, quote: Quote):
         with Session(engine) as session:
             session.add(quote_to_add)
             session.commit()
+        return {"status": "OK", "message": "Inserted Correctly"}
     except IntegrityError as ex:
-        raise HTTPException(status_code=500, detail=str(ex))
+        response.status_code = status.HTTP_409_CONFLICT
+        return {"status": "Error", "message": "Quote already inserted..."}
 
 
 def check_model(model):
