@@ -1,4 +1,5 @@
 from .run_scenarios import run_scenarios, summarize_scenarios
+from .rerun_scenarios import rerun_scenarios
 
 
 def add_run_scenarios_args(command_parser):

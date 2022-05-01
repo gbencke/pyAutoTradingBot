@@ -4,6 +4,7 @@ import argparse
 from pyautotrader.utils.data_import import import_data_from_profit_chart, add_data_import_args, import_data_from_csv, aggregate_data_from_csv
 from pyautotrader.utils.model_export import generate_language_model, add_generate_language_args
 from pyautotrader.utils.run_scenarios import run_scenarios, add_run_scenarios_args, summarize_scenarios
+from pyautotrader.utils.run_scenarios import rerun_scenarios
 from pyautotrader.server import start_server, add_server_args
 from pyautotrader.models import migrate_tables
 
@@ -20,7 +21,8 @@ command_parser.add_argument('command',
                                      'import_data_from_csv',
                                      'summarize_scenarios',
                                      'start_server',
-                                     'aggregate_data_from_csv'],
+                                     'aggregate_data_from_csv',
+                                     'rerun_scenarios'],
                             help="""
                             Command to be performed by CLI, can be: 
                                  [import_data_from_profit_chart_into_metatrader, 
@@ -56,3 +58,5 @@ if __name__ == '__main__':
         import_data_from_csv(args)
     if args.command == 'aggregate_data_from_csv':
         aggregate_data_from_csv(args)
+    if args.command == 'rerun_scenarios':
+        rerun_scenarios()
