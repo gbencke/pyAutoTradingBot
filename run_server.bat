@@ -4,7 +4,7 @@ call .\env\Scripts\activate.bat
 
 set PYAUTOTRADER_ROOT=%cd%
 
-set PYTHONPATH=C:\git\216\src
+set PYTHONPATH=\git\216\src
 
 cd src\pyautotrader
 
