@@ -10,7 +10,7 @@ export PYAUTOTRADER_ROOT=$PWD
 
 cd src/pyautotrader
 
-export USAR_SMART_TOP=0
+export USAR_SMART_STOP=0
 
 python __main__.py rerun_scenarios 
 
