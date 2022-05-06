@@ -8,6 +8,8 @@ export PYTHONPATH=$PWD/src
 
 export PYAUTOTRADER_ROOT=$PWD
 
+export USAR_SMART_STOP=0
+
 cd src/pyautotrader
 
 export CURRENT_TARGET=1.5
