@@ -1,3 +1,7 @@
+set SOURCE_DIR=%cd%
+
+call .\env\Scripts\activate.bat
+
 set PYTHONPATH=src
 set USAR_SMART_STOP=0
 set CURRENT_TARGET=0.4
