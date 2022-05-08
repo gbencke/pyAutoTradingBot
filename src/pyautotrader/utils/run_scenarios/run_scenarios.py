@@ -46,6 +46,9 @@ def summarize():
         current_parameters = joblib.load(parameter_file)
         trades = pd.read_excel(test_trades)
 
+        if len(trades.index) == 0 or (not 'result' in trades):
+            continue
+
         strategies_run.append({
             "current_strategy": current_strategy,
             "current_exchange": current_parameters['CURRENT_EXCHANGE'],
