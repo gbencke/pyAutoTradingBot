@@ -1,10 +1,10 @@
 
 
 TIMEFRAMES = [{'timeframe':  '5Min',
-               'file': 'WDO$M5.csv',  'tradeduration': 48}]
+               'file': 'WDO$M5.csv',  'tradeduration': 24}]
 
-CURRENT_TARGET = [1.2, 1.1, 1.0, 0.9]
-CURRENT_STOP = [0.6, 0.5, 0.4]
+CURRENT_TARGET = [1.1, 1.0, 0.9, 0.8, 0.7]
+CURRENT_STOP = [0.6, 0.5, 0.4, 0.3]
 DECISION_BOUNDARY = [0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2]
 
 for curTIMEFRAME in TIMEFRAMES:

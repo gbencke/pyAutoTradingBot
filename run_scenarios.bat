@@ -12,13 +12,37 @@ cd %SOURCE_DIR%
 
 cd src\pyautotrader
 
-set CURRENT_TARGET=0.8
-set CURRENT_STOP=0.4
+set CURRENT_TARGET=1.1
+set CURRENT_STOP=0.5
+set DECISION_BOUNDARY=0.4
+set CURRENT_5MIN_FILE_CSV=WDO$M5.csv
+set CURRENT_TIMEFRAME=5Min
+set MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1
 
-set CURRENT_5MIN_FILE_CSV=WDO$M10.csv
-set CURRENT_TIMEFRAME=10Min
-set MAX_TRADE_DURATION=12
-python __main__.py run_scenarios --minimum-interactions 2
+set CURRENT_TARGET=1.1
+set CURRENT_STOP=0.5
+set DECISION_BOUNDARY=0.5
+set CURRENT_5MIN_FILE_CSV=WDO$M5.csv
+set CURRENT_TIMEFRAME=5Min
+set MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1
+
+set CURRENT_TARGET=1.1
+set CURRENT_STOP=0.5
+set DECISION_BOUNDARY=0.6
+set CURRENT_5MIN_FILE_CSV=WDO$M5.csv
+set CURRENT_TIMEFRAME=5Min
+set MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1
+
+set CURRENT_TARGET=1.1
+set CURRENT_STOP=0.5
+set DECISION_BOUNDARY=0.7
+set CURRENT_5MIN_FILE_CSV=WDO$M5.csv
+set CURRENT_TIMEFRAME=5Min
+set MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1
 
 rem ------------------------------------------------------
 python __main__.py summarize_scenarios
