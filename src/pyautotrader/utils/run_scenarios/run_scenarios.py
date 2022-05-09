@@ -35,6 +35,9 @@ def summarize():
         else:
             parameter_file = os.path.join(
                 current_strategy_folder, parameter_file[0])
+        current_parameters = joblib.load(parameter_file)
+
+        # -----------------------------
 
         test_trades = [x for x in os.listdir(
             current_strategy_folder) if x.endswith('test_trades.xlsx')]
@@ -43,8 +46,31 @@ def summarize():
         else:
             test_trades = os.path.join(current_strategy_folder, test_trades[0])
 
-        current_parameters = joblib.load(parameter_file)
         trades = pd.read_excel(test_trades)
+
+        # --------------------------------
+
+        predicts = [x for x in os.listdir(
+            current_strategy_folder) if x.endswith('predicts.xlsx')]
+        if len(predicts) == 0:
+            continue
+        else:
+            predicts = os.path.join(current_strategy_folder, predicts[0])
+
+        predicts = pd.read_excel(predicts)
+
+        # --------------------------------
+
+        check_train = [x for x in os.listdir(
+            current_strategy_folder) if x.endswith('check_model.xlsx')]
+        if len(check_train) == 0:
+            continue
+        else:
+            check_train = os.path.join(current_strategy_folder, check_train[0])
+
+        check_train = pd.read_excel(check_train)
+
+        # --------------------------------
 
         if len(trades.index) == 0 or (not 'result' in trades):
             continue
@@ -72,7 +98,11 @@ def summarize():
             'max_winner': trades['result'].max(),
             'max_loser': trades['result'].min(),
             'first_trade': str(trades['Date'].min()),
-            'last_trade': str(trades['Date'].max())
+            'last_trade': str(trades['Date'].max()),
+            'test_short_cost': (predicts['short_cost'].sum() / predicts['short_cost'].count()),
+            'test_long_cost': (predicts['long_cost'].sum() / predicts['long_cost'].count()),
+            'train_short_cost': (check_train['short_cost'].sum() / check_train['short_cost'].count()),
+            'train_long_cost': (check_train['long_cost'].sum() / check_train['long_cost'].count())
         })
 
     pd.DataFrame(strategies_run).to_excel(final_excel_summary)
@@ -149,5 +179,10 @@ def run_scenarios(args):
         os.getcwd(), '..', 'strategies', 'B3', 'WDOL', '00.data', 'input')
     first = True
     for current_interaction in range(MINIMUM_INTERACTIONS):
+        CURRENT_TARGET = os.environ['CURRENT_TARGET']
+        CURRENT_STOP = os.environ['CURRENT_STOP']
+        DECISION_BOUNDARY = os.environ['DECISION_BOUNDARY']
+        print(
+            f'Running Interaction ({current_interaction + 1}/{MINIMUM_INTERACTIONS}), Params: {CURRENT_TARGET} / {CURRENT_STOP} / {DECISION_BOUNDARY}')
         run_notebook(first)
         first = False
