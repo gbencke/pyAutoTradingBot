@@ -7,12 +7,29 @@ CURRENT_TARGET = [1.1, 1.0, 0.9, 0.8, 0.7]
 CURRENT_STOP = [0.6, 0.5, 0.4, 0.3]
 DECISION_BOUNDARY = [0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2]
 
+totalScenariosRun = 0
+
+print('#!/bin/bash\n')
+
+print('source ./env/bin/activate\n')
+
+print('source ./clean_notebooks.sh\n')
+
+print('export PYTHONPATH=$PWD/src\n')
+
+print('export PYAUTOTRADER_ROOT=$PWD\n')
+
+print('export USAR_SMART_STOP=0\n')
+
+print('cd src/pyautotrader\n')
+
 for curTIMEFRAME in TIMEFRAMES:
     for curTARGET in CURRENT_TARGET:
         for curSTOP in CURRENT_STOP:
             for curDecisionBoundary in DECISION_BOUNDARY:
                 if curTARGET < (curSTOP * 2):
                     continue
+                totalScenariosRun += 1
                 print(f"export CURRENT_TARGET={curTARGET}")
                 print(f"export CURRENT_STOP={curSTOP}")
                 print(f"export DECISION_BOUNDARY={curDecisionBoundary}")
@@ -20,5 +37,25 @@ for curTIMEFRAME in TIMEFRAMES:
                 print(f"export CURRENT_TIMEFRAME={curTIMEFRAME['timeframe']}")
                 print(
                     f"export MAX_TRADE_DURATION={curTIMEFRAME['tradeduration']}")
-                print(f"python __main__.py run_scenarios --minimum-interactions 1")
+                print(f"python __main__.py run_scenarios --minimum-interactions 1 & ")
                 print()
+                if (totalScenariosRun % 4) == 0:
+                    print('wait')
+
+print('wait\n')
+
+print("python __main__.py summarize_scenarios\n")
+
+print("cd ../../utils\n")
+
+print("python ./generate_pnl_charts.py\n")
+
+print("cd $PYAUTOTRADER_ROOT\n")
+
+print("cd src/strategies/B3/WDOL/00.data/\n")
+
+print('export strategy7z="$(date \'+%Y%m%d%H%M%S\').strategies.7z"\n')
+
+print("7z a -mx9 $strategy7z strategies\n")
+
+print("cd $PYAUTOTRADER_ROOT\n")

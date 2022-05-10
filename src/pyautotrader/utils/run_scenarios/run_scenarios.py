@@ -108,7 +108,7 @@ def summarize():
     pd.DataFrame(strategies_run).to_excel(final_excel_summary)
 
 
-def run_notebook(first):
+def run_notebook(first, use_cache):
     current_date = datetime.now().strftime("%Y%m%d%H%M%S")
 
     current_folder = os.path.join(
@@ -131,15 +131,16 @@ def run_notebook(first):
 
         pm.execute_notebook(input_notebook, output_notebook)
 
-        if not os.path.exists(current_cache):
-            os.mkdir(current_cache)
+        if use_cache:
+            if not os.path.exists(current_cache):
+                os.mkdir(current_cache)
 
-        for f in os.listdir(current_cache):
-            os.remove(os.path.join(current_cache, f))
+            for f in os.listdir(current_cache):
+                os.remove(os.path.join(current_cache, f))
 
-        for f in os.listdir(current_strategies):
-            shutil.copyfile(os.path.join(current_strategies, f),
-                            os.path.join(current_cache, f))
+            for f in os.listdir(current_strategies):
+                shutil.copyfile(os.path.join(current_strategies, f),
+                                os.path.join(current_cache, f))
 
     else:
         for f in os.listdir(current_cache):
@@ -184,5 +185,5 @@ def run_scenarios(args):
         DECISION_BOUNDARY = os.environ['DECISION_BOUNDARY']
         print(
             f'Running Interaction ({current_interaction + 1}/{MINIMUM_INTERACTIONS}), Params: {CURRENT_TARGET} / {CURRENT_STOP} / {DECISION_BOUNDARY}')
-        run_notebook(first)
+        run_notebook(first, MINIMUM_INTERACTIONS > 1)
         first = False
