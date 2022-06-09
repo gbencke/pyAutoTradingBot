@@ -25,6 +25,7 @@ def summarize():
                       if x[0] != current_strategies_folder])
 
     for current_strategy in strategies:
+        print("Processing:" + current_strategy)
         current_strategy_folder = os.path.join(
             current_strategies_folder, current_strategy)
 
@@ -75,6 +76,38 @@ def summarize():
         if len(trades.index) == 0 or (not 'result' in trades):
             continue
 
+        def short_cost(df_short):
+            valid_rows = 0
+            error_row = 0
+
+            for _, row in df_short.iterrows():
+                row_is_short = 1 if row['is_short'] > 0 else 0
+                row_is_short_predict = 1 if row['short_predict'] >= current_parameters['DECISION_BOUNDARY'] else 0
+                if not (row_is_short == 0 and row_is_short_predict == 0):
+                    valid_rows += 1
+                else:
+                    continue
+                if row_is_short != row_is_short_predict:
+                    error_row += 1
+
+            return error_row / valid_rows
+
+        def long_cost(df_long):
+            valid_rows = 0
+            error_row = 0
+
+            for _, row in df_long.iterrows():
+                row_is_long = 1 if row['is_long'] > 0 else 0
+                row_is_long_predict = 1 if row['long_predict'] >= current_parameters['DECISION_BOUNDARY'] else 0
+                if not (row_is_long == 0 and row_is_long_predict == 0):
+                    valid_rows += 1
+                else:
+                    continue
+                if row_is_long != row_is_long_predict:
+                    error_row += 1
+
+            return error_row / valid_rows
+
         strategies_run.append({
             "current_strategy": current_strategy,
             "current_exchange": current_parameters['CURRENT_EXCHANGE'],
@@ -99,10 +132,10 @@ def summarize():
             'max_loser': trades['result'].min(),
             'first_trade': str(trades['Date'].min()),
             'last_trade': str(trades['Date'].max()),
-            'test_short_cost': (predicts['short_cost'].sum() / predicts['short_cost'].count()),
-            'test_long_cost': (predicts['long_cost'].sum() / predicts['long_cost'].count()),
-            'train_short_cost': (check_train['short_cost'].sum() / check_train['short_cost'].count()),
-            'train_long_cost': (check_train['long_cost'].sum() / check_train['long_cost'].count())
+            'test_short_cost': short_cost(predicts),
+            'test_long_cost': long_cost(predicts),
+            'train_short_cost': short_cost(check_train),
+            'train_long_cost': short_cost(check_train)
         })
 
     pd.DataFrame(strategies_run).to_excel(final_excel_summary)
