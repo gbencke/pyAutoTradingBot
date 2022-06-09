@@ -12,600 +12,8 @@ export USAR_SMART_STOP=0
 
 cd src/pyautotrader
 
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.5
-export DECISION_BOUNDARY=0.4
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.5
-export DECISION_BOUNDARY=0.5
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.5
-export DECISION_BOUNDARY=0.6
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.5
-export DECISION_BOUNDARY=0.7
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.5
-export DECISION_BOUNDARY=0.8
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.5
-export DECISION_BOUNDARY=0.9
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.5
-export DECISION_BOUNDARY=1.0
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.5
-export DECISION_BOUNDARY=1.1
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.5
-export DECISION_BOUNDARY=1.2
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.4
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.5
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.6
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.7
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.8
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.9
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=1.0
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=1.1
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=1.2
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.4
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.5
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.6
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.7
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.8
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.9
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=1.0
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=1.1
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.1
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=1.2
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.5
-export DECISION_BOUNDARY=0.4
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.5
-export DECISION_BOUNDARY=0.5
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.5
-export DECISION_BOUNDARY=0.6
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.5
-export DECISION_BOUNDARY=0.7
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.5
-export DECISION_BOUNDARY=0.8
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.5
-export DECISION_BOUNDARY=0.9
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.5
-export DECISION_BOUNDARY=1.0
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.5
-export DECISION_BOUNDARY=1.1
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.5
-export DECISION_BOUNDARY=1.2
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.4
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.5
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.6
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.7
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.8
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.9
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=1.0
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=1.1
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=1.2
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.4
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.5
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.6
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.7
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.8
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.9
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=1.0
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=1.1
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=1.0
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=1.2
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.9
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.4
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.9
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.5
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=0.9
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.6
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.9
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.7
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.9
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.8
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.9
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.9
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=0.9
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=1.0
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.9
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=1.1
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.9
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=1.2
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.9
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.4
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=0.9
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.5
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.9
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.6
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.9
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.7
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.9
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.8
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=0.9
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.9
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.9
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=1.0
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.9
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=1.1
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.9
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=1.2
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
+export NUM_TREES=1
+export TREE_DEPTH=1
 export CURRENT_TARGET=0.8
 export CURRENT_STOP=0.4
 export DECISION_BOUNDARY=0.4
@@ -614,215 +22,195 @@ export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
 python __main__.py run_scenarios --minimum-interactions 1 & 
 
+export NUM_TREES=2
+export TREE_DEPTH=1
 export CURRENT_TARGET=0.8
 export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.5
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.8
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.6
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.8
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.7
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=0.8
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.8
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.8
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=0.9
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.8
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=1.0
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.8
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=1.1
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=0.8
-export CURRENT_STOP=0.4
-export DECISION_BOUNDARY=1.2
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.8
-export CURRENT_STOP=0.3
 export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
 python __main__.py run_scenarios --minimum-interactions 1 & 
 
+export NUM_TREES=3
+export TREE_DEPTH=1
 export CURRENT_TARGET=0.8
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.5
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.8
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.6
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=0.8
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.7
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.8
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.8
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.8
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.9
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.8
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=1.0
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-wait
-export CURRENT_TARGET=0.8
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=1.1
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.8
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=1.2
-export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
-export CURRENT_TIMEFRAME=5Min
-export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
-
-export CURRENT_TARGET=0.7
-export CURRENT_STOP=0.3
+export CURRENT_STOP=0.4
 export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
 python __main__.py run_scenarios --minimum-interactions 1 & 
 
-export CURRENT_TARGET=0.7
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.5
+export NUM_TREES=4
+export TREE_DEPTH=1
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
 python __main__.py run_scenarios --minimum-interactions 1 & 
 
 wait
-export CURRENT_TARGET=0.7
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.6
+export NUM_TREES=5
+export TREE_DEPTH=1
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
 python __main__.py run_scenarios --minimum-interactions 1 & 
 
-export CURRENT_TARGET=0.7
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.7
+export NUM_TREES=6
+export TREE_DEPTH=1
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
 python __main__.py run_scenarios --minimum-interactions 1 & 
 
-export CURRENT_TARGET=0.7
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.8
+export NUM_TREES=7
+export TREE_DEPTH=1
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
 python __main__.py run_scenarios --minimum-interactions 1 & 
 
-export CURRENT_TARGET=0.7
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=0.9
+export NUM_TREES=8
+export TREE_DEPTH=1
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
 python __main__.py run_scenarios --minimum-interactions 1 & 
 
 wait
-export CURRENT_TARGET=0.7
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=1.0
+export NUM_TREES=9
+export TREE_DEPTH=1
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
 python __main__.py run_scenarios --minimum-interactions 1 & 
 
-export CURRENT_TARGET=0.7
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=1.1
+export NUM_TREES=10
+export TREE_DEPTH=1
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
 python __main__.py run_scenarios --minimum-interactions 1 & 
 
-export CURRENT_TARGET=0.7
-export CURRENT_STOP=0.3
-export DECISION_BOUNDARY=1.2
+export NUM_TREES=11
+export TREE_DEPTH=1
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export NUM_TREES=12
+export TREE_DEPTH=1
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export NUM_TREES=13
+export TREE_DEPTH=1
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export NUM_TREES=14
+export TREE_DEPTH=1
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export NUM_TREES=15
+export TREE_DEPTH=1
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export NUM_TREES=16
+export TREE_DEPTH=1
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export NUM_TREES=17
+export TREE_DEPTH=1
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export NUM_TREES=18
+export TREE_DEPTH=1
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export NUM_TREES=19
+export TREE_DEPTH=1
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export NUM_TREES=20
+export TREE_DEPTH=1
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
