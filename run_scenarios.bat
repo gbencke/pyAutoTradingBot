@@ -8,6 +8,8 @@ set PYAUTOTRADER_ROOT=%cd%
 
 set PYTHONPATH=\git\216\src
 
+set WEIGTH_RATIO=10
+
 cd %SOURCE_DIR%
 
 cd src\pyautotrader

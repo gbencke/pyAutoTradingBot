@@ -1,3 +1,4 @@
+import time
 import os
 import sys
 import papermill as pm
@@ -108,6 +109,8 @@ def summarize():
 
             return error_row / valid_rows
 
+        print("Will add " + current_strategy)
+
         strategies_run.append({
             "current_strategy": current_strategy,
             "current_exchange": current_parameters['CURRENT_EXCHANGE'],
@@ -119,6 +122,7 @@ def summarize():
             "max_trade_duration": current_parameters['MAX_TRADE_DURATION'],
             "num_trees": current_parameters['NUM_TREES'],
             "tree_depth": current_parameters['TREE_DEPTH'],
+            "weight_ratio": current_parameters['WEIGHT_RATIO'],
             "current_target": current_parameters['CURRENT_TARGET'],
             "current_stop": current_parameters['CURRENT_STOP'],
             "current_asset": current_parameters['CURRENT_ASSET'],
@@ -143,7 +147,7 @@ def summarize():
     pd.DataFrame(strategies_run).to_excel(final_excel_summary)
 
 
-def run_notebook(first, use_cache):
+def run_notebook():
     current_date = datetime.now().strftime("%Y%m%d%H%M%S")
 
     current_folder = os.path.join(
@@ -158,7 +162,7 @@ def run_notebook(first, use_cache):
 
     os.environ["DATA_OUTPUT_DIR"] = current_strategies
 
-    if first:
+    if not os.path.exists(current_cache):
         input_notebook = os.path.join(
             current_folder, '02.candle_strategy_0100_create_dataframe.ipynb')
         output_notebook = os.path.join(
@@ -166,16 +170,15 @@ def run_notebook(first, use_cache):
 
         pm.execute_notebook(input_notebook, output_notebook)
 
-        if use_cache:
-            if not os.path.exists(current_cache):
-                os.mkdir(current_cache)
+        if not os.path.exists(current_cache):
+            os.mkdir(current_cache)
 
-            for f in os.listdir(current_cache):
-                os.remove(os.path.join(current_cache, f))
+        for f in os.listdir(current_cache):
+            os.remove(os.path.join(current_cache, f))
 
-            for f in os.listdir(current_strategies):
-                shutil.copyfile(os.path.join(current_strategies, f),
-                                os.path.join(current_cache, f))
+        for f in os.listdir(current_strategies):
+            shutil.copyfile(os.path.join(current_strategies, f),
+                            os.path.join(current_cache, f))
 
     else:
         for f in os.listdir(current_cache):
@@ -213,12 +216,11 @@ def run_scenarios(args):
 
     os.environ["DATA_INPUT_DIR"] = os.path.join(
         os.getcwd(), '..', 'strategies', 'B3', 'WDOL', '00.data', 'input')
-    first = True
     for current_interaction in range(MINIMUM_INTERACTIONS):
+        time.sleep(2)
         CURRENT_TARGET = os.environ['CURRENT_TARGET']
         CURRENT_STOP = os.environ['CURRENT_STOP']
         DECISION_BOUNDARY = os.environ['DECISION_BOUNDARY']
         print(
             f'Running Interaction ({current_interaction + 1}/{MINIMUM_INTERACTIONS}), Params: {CURRENT_TARGET} / {CURRENT_STOP} / {DECISION_BOUNDARY}')
-        run_notebook(first, MINIMUM_INTERACTIONS > 1)
-        first = False
+        run_notebook()

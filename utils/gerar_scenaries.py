@@ -10,10 +10,9 @@ TIMEFRAMES = [{'timeframe':  '5Min',
 CURRENT_TARGET = [0.8]
 CURRENT_STOP = [0.4]
 DECISION_BOUNDARY = [0.4]
-
-NUM_TREES = list(range(1, 200))
-
-TREE_DEPTH = [1]
+WEIGHT_RATIO = [0.8, 1.0, 1.2]
+NUM_TREES = list(range(1, 100))
+TREE_DEPTH = [1, 2, 3]
 
 totalScenariosRun = 0
 
@@ -31,32 +30,34 @@ print('export USAR_SMART_STOP=0\n')
 
 print('cd src/pyautotrader\n')
 
-for curNUM_TREE in NUM_TREES:
-    for curTREE_DEPTH in TREE_DEPTH:
-        for curTIMEFRAME in TIMEFRAMES:
-            for curTARGET in CURRENT_TARGET:
-                for curSTOP in CURRENT_STOP:
-                    for curDecisionBoundary in DECISION_BOUNDARY:
-                        if curTARGET < (curSTOP * 2):
-                            continue
-                        totalScenariosRun += 1
-                        print(f"export NUM_TREES={curNUM_TREE}")
-                        print(f"export TREE_DEPTH={curTREE_DEPTH}")
-                        print(f"export CURRENT_TARGET={curTARGET}")
-                        print(f"export CURRENT_STOP={curSTOP}")
-                        print(
-                            f"export DECISION_BOUNDARY={curDecisionBoundary}")
-                        print(
-                            f"export CURRENT_5MIN_FILE_CSV='{curTIMEFRAME['file']}'")
-                        print(
-                            f"export CURRENT_TIMEFRAME={curTIMEFRAME['timeframe']}")
-                        print(
-                            f"export MAX_TRADE_DURATION={curTIMEFRAME['tradeduration']}")
-                        print(
-                            f"python __main__.py run_scenarios --minimum-interactions 1 & ")
-                        print()
-                        if (totalScenariosRun % 4) == 0:
-                            print('wait')
+for curWEIGHT_RATIO in WEIGHT_RATIO:
+    for curNUM_TREE in NUM_TREES:
+        for curTREE_DEPTH in TREE_DEPTH:
+            for curTIMEFRAME in TIMEFRAMES:
+                for curTARGET in CURRENT_TARGET:
+                    for curSTOP in CURRENT_STOP:
+                        for curDecisionBoundary in DECISION_BOUNDARY:
+                            if curTARGET < (curSTOP * 2):
+                                continue
+                            totalScenariosRun += 1
+                            print(f'export WEIGHT_RATIO={curWEIGHT_RATIO}')
+                            print(f"export NUM_TREES={curNUM_TREE}")
+                            print(f"export TREE_DEPTH={curTREE_DEPTH}")
+                            print(f"export CURRENT_TARGET={curTARGET}")
+                            print(f"export CURRENT_STOP={curSTOP}")
+                            print(
+                                f"export DECISION_BOUNDARY={curDecisionBoundary}")
+                            print(
+                                f"export CURRENT_5MIN_FILE_CSV='{curTIMEFRAME['file']}'")
+                            print(
+                                f"export CURRENT_TIMEFRAME={curTIMEFRAME['timeframe']}")
+                            print(
+                                f"export MAX_TRADE_DURATION={curTIMEFRAME['tradeduration']}")
+                            print(
+                                f"python __main__.py run_scenarios --minimum-interactions 1 & ")
+                            print()
+                            if (totalScenariosRun % 6) == 0:
+                                print('wait')
 
 print('wait\n')
 
