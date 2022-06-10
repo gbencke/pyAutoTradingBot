@@ -56,7 +56,7 @@ for curWEIGHT_RATIO in WEIGHT_RATIO:
                             print(
                                 f"python __main__.py run_scenarios --minimum-interactions 1 & ")
                             print()
-                            if (totalScenariosRun % 6) == 0:
+                            if (totalScenariosRun % 4) == 0:
                                 print('wait')
 
 print('wait\n')
