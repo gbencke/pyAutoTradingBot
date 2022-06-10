@@ -149,7 +149,7 @@ def summarize():
 
 
 def run_notebook():
-    current_date = datetime.now().strftime("%Y%m%d%H%M%S")
+    current_date = datetime.now().strftime("%Y%m%d%H%M%S")+"."+str(os.getpid())
 
     current_folder = os.path.join(
         os.getcwd(), '..', 'strategies', 'B3', 'WDOL', '02.candle_strategy')
