@@ -11,9 +11,7 @@ CURRENT_TARGET = [0.8]
 CURRENT_STOP = [0.4]
 DECISION_BOUNDARY = [0.4]
 
-NUM_TREES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-             11, 12, 13, 14, 15, 16, 17, 18,
-             19, 20]
+NUM_TREES = list(range(1, 200))
 
 TREE_DEPTH = [1]
 
