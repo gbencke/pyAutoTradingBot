@@ -219,7 +219,6 @@ def run_scenarios(args):
     os.environ["DATA_INPUT_DIR"] = os.path.join(
         os.getcwd(), '..', 'strategies', 'B3', 'WDOL', '00.data', 'input')
     for current_interaction in range(MINIMUM_INTERACTIONS):
-        time.sleep(2)
         CURRENT_TARGET = os.environ['CURRENT_TARGET']
         CURRENT_STOP = os.environ['CURRENT_STOP']
         DECISION_BOUNDARY = os.environ['DECISION_BOUNDARY']
