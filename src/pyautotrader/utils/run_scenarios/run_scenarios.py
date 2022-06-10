@@ -6,6 +6,7 @@ import pandas as pd
 import joblib
 import shutil
 from datetime import datetime
+from ilock import ILock
 
 
 def summarize_scenarios(args):
@@ -162,28 +163,29 @@ def run_notebook():
 
     os.environ["DATA_OUTPUT_DIR"] = current_strategies
 
-    if not os.path.exists(current_cache):
-        input_notebook = os.path.join(
-            current_folder, '02.candle_strategy_0100_create_dataframe.ipynb')
-        output_notebook = os.path.join(
-            current_strategies, '02.candle_strategy_0100_create_dataframe.executed.ipynb')
-
-        pm.execute_notebook(input_notebook, output_notebook)
-
+    with ILock('Create Cache', timeout=1500000):
         if not os.path.exists(current_cache):
-            os.mkdir(current_cache)
+            input_notebook = os.path.join(
+                current_folder, '02.candle_strategy_0100_create_dataframe.ipynb')
+            output_notebook = os.path.join(
+                current_strategies, '02.candle_strategy_0100_create_dataframe.executed.ipynb')
 
-        for f in os.listdir(current_cache):
-            os.remove(os.path.join(current_cache, f))
+            pm.execute_notebook(input_notebook, output_notebook)
 
-        for f in os.listdir(current_strategies):
-            shutil.copyfile(os.path.join(current_strategies, f),
-                            os.path.join(current_cache, f))
+            if not os.path.exists(current_cache):
+                os.mkdir(current_cache)
 
-    else:
-        for f in os.listdir(current_cache):
-            shutil.copyfile(os.path.join(current_cache, f),
-                            os.path.join(current_strategies, f))
+            for f in os.listdir(current_cache):
+                os.remove(os.path.join(current_cache, f))
+
+            for f in os.listdir(current_strategies):
+                shutil.copyfile(os.path.join(current_strategies, f),
+                                os.path.join(current_cache, f))
+
+        else:
+            for f in os.listdir(current_cache):
+                shutil.copyfile(os.path.join(current_cache, f),
+                                os.path.join(current_strategies, f))
 
     input_notebook = os.path.join(
         current_folder, '02.candle_strategy_0200_create_xgbooster.ipynb')
