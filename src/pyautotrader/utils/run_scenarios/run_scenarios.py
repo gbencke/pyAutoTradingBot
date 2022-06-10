@@ -117,6 +117,8 @@ def summarize():
             "minimum_date_trade": current_parameters['MINIMUM_DATE_TRADE'],
             "max_train_date": current_parameters['MAX_TRAIN_DATE'],
             "max_trade_duration": current_parameters['MAX_TRADE_DURATION'],
+            "num_trees": current_parameters['NUM_TREES'],
+            "tree_depth": current_parameters['TREE_DEPTH'],
             "current_target": current_parameters['CURRENT_TARGET'],
             "current_stop": current_parameters['CURRENT_STOP'],
             "current_asset": current_parameters['CURRENT_ASSET'],
