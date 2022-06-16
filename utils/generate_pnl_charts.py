@@ -37,7 +37,8 @@ def sanity_check():
 
 
 def generate_pnl_charts(PYAUTOTRADER_STRATEGIES_FOLDER, PYAUTOTRADER_STRATEGIES_SUMMARY):
-    dfStrategies = pd.read_excel(PYAUTOTRADER_STRATEGIES_SUMMARY)
+    dfStrategies = pd.read_excel(PYAUTOTRADER_STRATEGIES_SUMMARY, converters={
+                                 'current_strategy': str})
     strategies = dfStrategies.to_dict('records')
 
     PNL_FOLDER = os.path.join(PYAUTOTRADER_STRATEGIES_FOLDER, 'pnl_charts')
