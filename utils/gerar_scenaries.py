@@ -10,9 +10,9 @@ TIMEFRAMES = [{'timeframe':  '5Min',
 CURRENT_TARGET = [0.8]
 CURRENT_STOP = [0.4]
 DECISION_BOUNDARY = [0.4]
-WEIGHT_RATIO = [0.8, 1.0, 1.2]
+WEIGHT_RATIO = [0.8]
 NUM_TREES = list(range(1, 100))
-TREE_DEPTH = [1, 2, 3]
+TREE_DEPTH = [2]
 
 totalScenariosRun = 0
 
