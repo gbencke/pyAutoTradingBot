@@ -1,3 +1,4 @@
+import glob
 import time
 import os
 import sys
@@ -7,6 +8,22 @@ import joblib
 import shutil
 from datetime import datetime
 from ilock import ILock
+
+
+def get_short_score(current_strategy_folder):
+    for current_file in glob.glob(os.path.join(current_strategy_folder, "*.short.train.score.txt")):
+        with open(current_file, "r") as f:
+            ret = f.read()
+            return float(ret)
+    return 0
+
+
+def get_long_score(current_strategy_folder):
+    for current_file in glob.glob(os.path.join(current_strategy_folder, "*.long.train.score.txt")):
+        with open(current_file, "r") as f:
+            ret = f.read()
+            return float(ret)
+    return 0
 
 
 def summarize_scenarios(args):
@@ -142,7 +159,9 @@ def summarize():
             'test_short_cost': short_cost(predicts),
             'test_long_cost': long_cost(predicts),
             'train_short_cost': short_cost(check_train),
-            'train_long_cost': short_cost(check_train)
+            'train_long_cost': long_cost(check_train),
+            'train_short_score': get_short_score(current_strategy_folder),
+            'train_long_score': get_long_score(current_strategy_folder),
         })
 
     pd.DataFrame(strategies_run).to_excel(final_excel_summary)
