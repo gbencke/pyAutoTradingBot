@@ -1125,6 +1125,1131 @@ export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
 python __main__.py run_scenarios --minimum-interactions 1 & 
 
+export WEIGHT_RATIO=0.8
+export NUM_TREES=100
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=101
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=102
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=103
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=104
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=105
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=106
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=107
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=108
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=109
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=110
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=111
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=112
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=113
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=114
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=115
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=116
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=117
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=118
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=119
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=120
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=121
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=122
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=123
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=124
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=125
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=126
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=127
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=128
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=129
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=130
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=131
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=132
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=133
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=134
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=135
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=136
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=137
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=138
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=139
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=140
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=141
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=142
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=143
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=144
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=145
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=146
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=147
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=148
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=149
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=150
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=151
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=152
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=153
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=154
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=155
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=156
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=157
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=158
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=159
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=160
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=161
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=162
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=163
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=164
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=165
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=166
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=167
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=168
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=169
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=170
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=171
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=172
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=173
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=174
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=175
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=176
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=177
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=178
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=179
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=180
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=181
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=182
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=183
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=184
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=185
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=186
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=187
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=188
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=189
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=190
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=191
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=192
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=193
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=194
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=195
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=196
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+wait
+export WEIGHT_RATIO=0.8
+export NUM_TREES=197
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=198
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
+export WEIGHT_RATIO=0.8
+export NUM_TREES=199
+export TREE_DEPTH=2
+export CURRENT_TARGET=0.8
+export CURRENT_STOP=0.4
+export DECISION_BOUNDARY=0.4
+export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
+export CURRENT_TIMEFRAME=5Min
+export MAX_TRADE_DURATION=24
+python __main__.py run_scenarios --minimum-interactions 1 & 
+
 wait
 
 python __main__.py summarize_scenarios

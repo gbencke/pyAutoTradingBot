@@ -11,7 +11,7 @@ CURRENT_TARGET = [0.8]
 CURRENT_STOP = [0.4]
 DECISION_BOUNDARY = [0.4]
 WEIGHT_RATIO = [0.8]
-NUM_TREES = list(range(1, 100))
+NUM_TREES = list(range(1, 200))
 TREE_DEPTH = [2]
 
 totalScenariosRun = 0
