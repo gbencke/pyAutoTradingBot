@@ -1,11 +1,8 @@
 import os
-import sys
-import uvicorn
 import glob
-import json
 import joblib
 
-from fastapi import FastAPI, HTTPException
+from fastapi import HTTPException
 from multiprocessing import Lock
 
 mutex = Lock()

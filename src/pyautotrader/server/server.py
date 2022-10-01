@@ -1,9 +1,5 @@
-import os
 import sys
 import uvicorn
-import glob
-import json
-import joblib
 
 from fastapi import FastAPI, HTTPException
 from fastapi import Response, status
@@ -14,7 +10,7 @@ from sqlalchemy.exc import IntegrityError
 from .value_objects import Quote
 from .parameters import get_parameters
 from .predict import get_predict as get_predict_db
-from pyautotrader.models.entities import QuoteORM
+from models.entities import QuoteORM
 
 app = FastAPI()
 engine = None

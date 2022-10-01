@@ -1,14 +1,13 @@
 import os
 from datetime import datetime
 
-import pandas_ta as ta
 import pandas as pd
 import joblib
 
-from fastapi import FastAPI, HTTPException
+from fastapi import HTTPException
 from sqlalchemy import desc
 from sqlalchemy.orm import Session
-from pyautotrader.models.entities import QuoteORM
+from models.entities import QuoteORM
 
 model_to_use = None
 best_short_booster = None

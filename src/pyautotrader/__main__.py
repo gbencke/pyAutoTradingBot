@@ -1,12 +1,10 @@
-import sys
-import os
 import argparse
-from pyautotrader.utils.data_import import import_data_from_profit_chart, add_data_import_args, import_data_from_csv, aggregate_data_from_csv
-from pyautotrader.utils.model_export import generate_language_model, add_generate_language_args
-from pyautotrader.utils.run_scenarios import run_scenarios, add_run_scenarios_args, summarize_scenarios
-from pyautotrader.utils.run_scenarios import rerun_scenarios
-from pyautotrader.server import start_server, add_server_args
-from pyautotrader.models import migrate_tables
+from .utils.data_import import import_data_from_profit_chart, add_data_import_args, import_data_from_csv, aggregate_data_from_csv
+from .utils.model_export import generate_language_model, add_generate_language_args
+from .utils.run_scenarios import run_scenarios, add_run_scenarios_args, summarize_scenarios
+from .utils.run_scenarios import rerun_scenarios
+from .server import start_server, add_server_args
+from .models import migrate_tables
 
 command_parser = argparse.ArgumentParser(
     description='pyAutoTrader - Universal Python Automatic Trading Bot - Utils CLI')

@@ -83,10 +83,7 @@ def create_ast_from_xgboost_dump(file_to_read):
         booster_number = int(current_line.replace(
             "booster[", "").replace("]:", ""))
         new_booster = dict()
-        new_booster = {
-            "booster": booster_number
-        }
-        new_booster['raw_lines'] = []
+        new_booster = {"booster": booster_number, 'raw_lines': []}
         return new_booster
 
     dump_file_lines = read_dump_file()

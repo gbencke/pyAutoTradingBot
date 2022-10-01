@@ -1,6 +1,6 @@
 import sys
 import os
-from pyautotrader.utils.model_export import create_ast_from_xgboost_dump, export_model_python
+from utils.model_export import create_ast_from_xgboost_dump, export_model_python
 
 if __name__ == '__main__':
     ast = create_ast_from_xgboost_dump(sys.argv[1])

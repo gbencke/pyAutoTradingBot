@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Index
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.types import Integer, Text, String, Float
+from sqlalchemy.types import Integer, String, Float
 
 Base = declarative_base()
 
@@ -18,9 +18,9 @@ class QuoteORM(Base):
     open = Column(Float, unique=False, nullable=False)
     high = Column(Float, unique=False, nullable=False)
     low = Column(Float, unique=False, nullable=False)
-    close = Column(Integer, unique=False, nullable=False)
-    business = Column(Integer, unique=False, nullable=False)
-    volume = Column(Integer, unique=False, nullable=False)
+    close = Column(Float, unique=False, nullable=False)
+    business = Column(Float, unique=False, nullable=False)
+    volume = Column(Float, unique=False, nullable=False)
     datetime = Column(Integer, unique=False, nullable=False)
 
 

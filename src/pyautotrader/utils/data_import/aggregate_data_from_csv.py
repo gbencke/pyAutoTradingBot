@@ -1,4 +1,4 @@
-import os
+import sys
 from datetime import datetime, timedelta
 import pandas as pd
 
@@ -74,8 +74,7 @@ def aggregate_data_from_csv(args):
         current_date_time = current_date_time + \
             timedelta(minutes=aggregation * 5)
 
-    linhas_saida = []
-    linhas_saida.append('datetime,open,high,low,close,business,volume')
+    linhas_saida = ['datetime,open,high,low,close,business,volume']
     linhas_saida += [f"{x['datetime']},{x['open']},{x['high']},{x['low']},{x['close']},{x['business']},{x['volume']}" for x in candles]
 
     with open(args.destination, 'w') as f:
