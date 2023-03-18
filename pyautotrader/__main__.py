@@ -4,7 +4,7 @@ from utils.model_export import generate_language_model, add_generate_language_ar
 from utils.run_scenarios import run_scenarios, add_run_scenarios_args, summarize_scenarios
 from utils.run_scenarios import rerun_scenarios
 from server import start_server, add_server_args
-from models import migrate_tables
+from pyautotrader.models import migrate_tables
 
 command_parser = argparse.ArgumentParser(
     description='pyAutoTrader - Universal Python Automatic Trading Bot - Utils CLI')
