@@ -1,16 +1,16 @@
-﻿#!/bin/bash
+#!/bin/bash
 
 source ./env/bin/activate
 
 source ./clean_notebooks.sh
 
-export PYTHONPATH=$PWD/src
+export PYTHONPATH=$PWD
 
 export PYAUTOTRADER_ROOT=$PWD
 
 export USAR_SMART_STOP=0
 
-cd src/pyautotrader
+cd pyautotrader
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=1
@@ -21,7 +21,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+python -m pyautotrader run_scenarios --minimum-interactions 1 & 
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=2
