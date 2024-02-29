@@ -145,6 +145,7 @@ websocket-client = "1.2.3"
 wrapt = "1.15.0"
 xgboost = "1.5.1"
 python-dotenv = "^1.0.1"
+jupyter = "^1.0.0"
 
 
 [build-system]
