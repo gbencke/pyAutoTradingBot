@@ -10,8 +10,6 @@ export PYAUTOTRADER_ROOT=$PWD
 
 export USAR_SMART_STOP=0
 
-cd pyautotrader
-
 export WEIGHT_RATIO=0.8
 export NUM_TREES=1
 export TREE_DEPTH=2
@@ -2254,13 +2252,13 @@ wait
 
 python __main__.py summarize_scenarios
 
-cd ../../utils
+cd pyautotrader/utils
 
 python ./generate_pnl_charts.py
 
 cd $PYAUTOTRADER_ROOT
 
-cd src/strategies/B3/WDOL/00.data/
+cd models/strategies/B3/WDOL/00.data/
 
 export strategy7z="$(date '+%Y%m%d%H%M%S').strategies.7z"
 
