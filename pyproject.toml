@@ -7,7 +7,7 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.11.7"
+python = "~3.11.7"
 ansicolor = "0.3.2"
 ansiwrap = "0.8.4"
 anyio = "3.4.0"
@@ -84,7 +84,6 @@ notebook = "6.4.6"
 numpy = "1.25.1"
 openpyxl = "3.0.9"
 packaging = "21.3"
-pandas = "2.0.3"
 pandas-ta = "0.3.14b0"
 pandocfilters = "1.5.0"
 papermill = "2.3.3"
@@ -146,6 +145,7 @@ wrapt = "1.15.0"
 xgboost = "1.5.1"
 python-dotenv = "^1.0.1"
 jupyter = "^1.0.0"
+pandas = "1.5.3"
 
 
 [build-system]
