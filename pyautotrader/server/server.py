@@ -1,4 +1,5 @@
 import sys
+import os
 import uvicorn
 
 from fastapi import FastAPI, HTTPException
@@ -13,8 +14,6 @@ from .predict import get_predict as get_predict_db
 from models.entities import QuoteORM
 
 app = FastAPI()
-engine = None
-model = None
 
 
 @app.get("/")
@@ -24,19 +23,21 @@ async def root():
 
 @app.get("/predict/{exchange}/{asset}/{timeframe}/{date}/{time}/")
 async def get_predict(exchange: str, asset: str, timeframe: str, date: str, time: str):
-    global model
-    global engine
-    return get_predict_db(exchange, asset, timeframe, date, time, get_parameters((model)), engine, model)
+    engine = create_engine(os.environ['engine_connection_string'])
+    model = os.environ['model']
+    print(model)
+    return get_predict_db(exchange, asset, timeframe, date, time, get_parameters(model), engine, model)
 
 
 @app.get("/parameters/")
 async def parameters():
-    global model
+    model = os.environ['model']
     return get_parameters(model)
 
 
 @app.post("/quotes/{exchange}/{asset}/{timeframe}/")
 async def post_quote(exchange: str, asset: str, timeframe: str, quote: Quote, response: Response):
+    engine = create_engine(os.environ['engine_connection_string'])
     if timeframe not in ['5Min', '15Min', '30Min', '60Min', 'Daily']:
         raise HTTPException(
             status_code=400, detail='timeframe should be:5Min, 15Min, 30Min, 60Min, Daily')
@@ -69,9 +70,6 @@ def check_model(model):
 
 
 def start_server(args):
-    global engine
-    global model
-
     CURRENT_IP = "127.0.0.1"
     CURRENT_PORT = 5000
 
@@ -79,7 +77,7 @@ def start_server(args):
         print('In order to ser a model, you need to specify the model.')
         sys.exit(1)
     else:
-        model = args.xgboost_model
+        os.environ['model'] = args.xgboost_model
 
     if args.sqlalchemy_connection_string is None:
         print('In order to start the server, you need to specify the SQLAlchemy connection string...')
@@ -91,11 +89,11 @@ def start_server(args):
     if args.listening_ip is not None:
         CURRENT_IP = args.listening_ip
 
-    if not check_model(model):
+    if not check_model(os.environ['model']):
         print('It seems that the model is not valid...')
         sys.exit(1)
 
-    engine = create_engine(args.sqlalchemy_connection_string)
+    os.environ['engine_connection_string'] = args.sqlalchemy_connection_string
 
     uvicorn.run("pyautotrader.server:app", host=CURRENT_IP,
                 port=CURRENT_PORT, log_level="debug")
