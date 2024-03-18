@@ -167,7 +167,12 @@ And a chart with the accumulated P/L of the best model:
 
 # Serving and inferring models
 
+At these point, we have run several models, with several different hyperparameters and now we need to use it in a bot.
 
+Despite its name, this repo does not contain a full trading bot that can receive real time quotes, infer them and send sell / buy orders to a real exchange. This role in our case was assigned to the [ProfitChartBot](https://github.com/gbencke/ProfitChartBot) project which scraps the screen of a real trading software: ProfitChart and then sends the quote and calculate a signal from the provided quote.
 
+We can see below a image of the [ProfitChartBot](https://github.com/gbencke/ProfitChartBot) working: 
 
 ![Alt text](./ProfitDemoBot.png)
+
+And we can also check this video demo: [ProfitChartBot Demo](https://s3.amazonaws.com/gbencke.pyautocrypto.example/2022.04.07.ProfitChartBotDemo.mp4)
