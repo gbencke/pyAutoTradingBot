@@ -143,6 +143,7 @@ export MAX_TRADE_DURATION=24
 poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
+
 export WEIGHT_RATIO=0.8
 export NUM_TREES=13
 export TREE_DEPTH=2
@@ -2252,7 +2253,7 @@ poetry run python -m pyautotrader summarize_scenarios
 
 cd pyautotrader/utils
 
-python ./generate_pnl_charts.py
+poetry run python ./generate_pnl_charts.py
 
 cd $PYAUTOTRADER_ROOT
 
@@ -2263,4 +2264,3 @@ export strategy7z="$(date '+%Y%m%d%H%M%S').strategies.7z"
 7z a -mx9 $strategy7z strategies
 
 cd $PYAUTOTRADER_ROOT
-
