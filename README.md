@@ -119,28 +119,37 @@ After the environment variables have been set, we can then run training with the
 poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 
 ```
 
-This will run all the scenarios and generate the following artefacts in the output directory:
+This will run all the training notebooks below, which are available in ```models/strategies/B3/WDOL/02.candle_strategy```
 
-| Artefact                                     | Description                                                                               |
-|----------------------------------------------|-------------------------------------------------------------------------------------------|
-| B3.WDO.5Min.80.40.check_model.xlsx           | XLSX file summarising the signals generated                                               |
-| B3.WDO.5Min.80.40.hist_long.png              | Histogram of predicted XGBoost scores for each candlestick for Long trades                |
-| B3.WDO.5Min.80.40.hist_short.png             | Histogram of predicted XGBoost scores for each candlestick for Long trades                |
-| B3.WDO.5Min.80.40.hyperparameters_long.xlsx  | Most significant features for the long model                                              |
-| B3.WDO.5Min.80.40.hyperparameters_short.xlsx | Most significant features for the short model                                             |
-| B3.WDO.5Min.80.40.long.train.score.txt       | The score of the model generated for the long operations                                  |
-| B3.WDO.5Min.80.40.parameters.pickle          | A pickle file containing the python parameters dictionary                                 |
-| B3.WDO.5Min.80.40.predicts.xlsx              | XLSX file containing the predicts for the test dataset                                    |
-| B3_WDO_5Min_80_40_process_long.py            | A python file that implements the long model                                              |
-| B3_WDO_5Min_80_40_process_short.py           | A python file that implements the short model                                             |
-| B3.WDO.5Min.80.40.raw.pickle                 | A pickle file containing a list of python dictionaries containing ALL the dataframes data |
-| B3.WDO.5Min.80.40.short.train.score.txt      | The score of the model generated for the short operations                                 |
-| B3.WDO.5Min.80.40.test_trades.xlsx           | The trades executed during the test dataset                                               |
-| B3.WDO.5Min.80.40.trades.xlsx                | The trades executed during the train dataset                                              |
-| B3.WDO.5Min.80.40.xgboostlongmodel.pickle    | The XGBoost long model in pickle format                                                   |
-| B3.WDO.5Min.80.40.xgboostlongmodel.txt       | A text dump of the XGBoost long model                                                     |
-| B3.WDO.5Min.80.40.xgboostshortmodel.pickle   | The XGBoost short model in pickle format                                                  |
-| B3.WDO.5Min.80.40.xgboostshortmodel.txt      | A text dump of the XGBoost short model                                                    |
+* **02.candle_strategy_0100_create_dataframe.ipynb**: This notebook takes the raw OHLC quotes from ```models/strategies/B3/WDOL/00.data/input``` and generates the dataframes that will be used during training
+* **02.candle_strategy_0200_create_xgbooster.ipynb**: From the dataframes generated in the previous step, we create the XGBoost Models.
+* **02.candle_strategy_0300_find_decision_boundary.ipynb**: With the generated models, we test them against the training data
+* **02.candle_strategy_0400_forward_testing.ipynb**: And after the testing with the training data, we test then with the test data ( not yet seen by the model), and generate the python file which is the model itself
+* **02.candle_strategy_0500_check_predict.ipynb**: After we created the python file, we can then use the API Server to test it against the data that we have, in order to check if the API and 
+* **02.candle_strategy_0600_analyse_test_trades.ipynb**: This is a simple analytics notebook with several charts regarding the best trading hours, day of the week and so on.
+
+and generate several artefacts which will be available in the directory indicated by ```DATA_OUTPUT_DIR```:
+
+| Artefact                                                                                                                                                                 | Description                                                                               |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| [B3.WDO.5Min.80.40.check_model.xlsx](https://s3.amazonaws.com/gbencke.pyautocrypto.example/20240220230332.266159/B3.WDO.5Min.80.40.check_model.xlsx)                     | XLSX file summarising the signals generated                                               |
+| [B3.WDO.5Min.80.40.hist_long.png](https://s3.amazonaws.com/gbencke.pyautocrypto.example/20240220230332.266159/B3.WDO.5Min.80.40.hist_long.png)                           | Histogram of predicted XGBoost scores for each candlestick for Long trades                |
+| [B3.WDO.5Min.80.40.hist_short.png](https://s3.amazonaws.com/gbencke.pyautocrypto.example/20240220230332.266159/B3.WDO.5Min.80.40.hist_short.png)                         | Histogram of predicted XGBoost scores for each candlestick for Long trades                |
+| [B3.WDO.5Min.80.40.hyperparameters_long.xlsx](https://s3.amazonaws.com/gbencke.pyautocrypto.example/20240220230332.266159/B3.WDO.5Min.80.40.hyperparameters_long.xlsx)   | Most significant features for the long model                                              | 
+| [B3.WDO.5Min.80.40.hyperparameters_short.xlsx](https://s3.amazonaws.com/gbencke.pyautocrypto.example/20240220230332.266159/B3.WDO.5Min.80.40.hyperparameters_short.xlsx) | Most significant features for the short model                                             |
+| [B3.WDO.5Min.80.40.long.train.score.txt](https://s3.amazonaws.com/gbencke.pyautocrypto.example/20240220230332.266159/B3.WDO.5Min.80.40.long.train.score.txt)             | The score of the model generated for the long operations                                  |
+| [B3.WDO.5Min.80.40.parameters.pickle](https://s3.amazonaws.com/gbencke.pyautocrypto.example/20240220230332.266159/B3.WDO.5Min.80.40.parameters.pickle)                   | A pickle file containing the python parameters dictionary                                 |
+| [B3.WDO.5Min.80.40.predicts.xlsx](https://s3.amazonaws.com/gbencke.pyautocrypto.example/20240220230332.266159/B3.WDO.5Min.80.40.predicts.xlsx)                           | XLSX file containing the predicts for the test dataset                                    |
+| [B3_WDO_5Min_80_40_process_long.py](https://s3.amazonaws.com/gbencke.pyautocrypto.example/20240220230332.266159/B3_WDO_5Min_80_40_process_long.py)                       | A python file that implements the long model                                              |
+| [B3_WDO_5Min_80_40_process_short.py](https://s3.amazonaws.com/gbencke.pyautocrypto.example/20240220230332.266159/B3_WDO_5Min_80_40_process_short.py)                     | A python file that implements the short model                                             |
+| [B3.WDO.5Min.80.40.raw.pickle](https://s3.amazonaws.com/gbencke.pyautocrypto.example/20240220230332.266159/B3.WDO.5Min.80.40.raw.pickle)                                 | A pickle file containing a list of python dictionaries containing ALL the dataframes data |
+| [B3.WDO.5Min.80.40.short.train.score.txt](https://s3.amazonaws.com/gbencke.pyautocrypto.example/20240220230332.266159/B3.WDO.5Min.80.40.short.train.score.txt)           | The score of the model generated for the short operations                                 |
+| [B3.WDO.5Min.80.40.test_trades.xlsx](https://s3.amazonaws.com/gbencke.pyautocrypto.example/20240220230332.266159/B3.WDO.5Min.80.40.test_trades.xlsx)                     | The trades executed during the test dataset                                               |
+| [B3.WDO.5Min.80.40.trades.xlsx](https://s3.amazonaws.com/gbencke.pyautocrypto.example/20240220230332.266159/B3.WDO.5Min.80.40.trades.xlsx)                               | The trades executed during the train dataset                                              |
+| [B3.WDO.5Min.80.40.xgboostlongmodel.pickle](https://s3.amazonaws.com/gbencke.pyautocrypto.example/20240220230332.266159/B3.WDO.5Min.80.40.xgboostlongmodel.pickle)       | The XGBoost long model in pickle format                                                   |
+| [B3.WDO.5Min.80.40.xgboostlongmodel.txt](https://s3.amazonaws.com/gbencke.pyautocrypto.example/20240220230332.266159/B3.WDO.5Min.80.40.xgboostlongmodel.txt)             | A text dump of the XGBoost long model                                                     |
+| [B3.WDO.5Min.80.40.xgboostshortmodel.pickle](https://s3.amazonaws.com/gbencke.pyautocrypto.example/20240220230332.266159/B3.WDO.5Min.80.40.xgboostshortmodel.pickle)     | The XGBoost short model in pickle format                                                  |
+| [B3.WDO.5Min.80.40.xgboostshortmodel.txt](https://s3.amazonaws.com/gbencke.pyautocrypto.example/20240220230332.266159/B3.WDO.5Min.80.40.xgboostshortmodel.txt)           | A text dump of the XGBoost short model                                                    |
 
 After the artefacts above have been generated, we can then serve them using the inference API that can be seen below.
 
@@ -156,7 +165,7 @@ And a chart with the accumulated P/L of the best model:
 
 ![P/L Chart](https://s3.amazonaws.com/gbencke.pyautocrypto.example/002018.20240318080231.47817.png)
 
-# Serving and infering models
+# Serving and inferring models
 
 
 
