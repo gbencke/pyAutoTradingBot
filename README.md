@@ -2,6 +2,8 @@
 
 The program aims to function as an automated trading bot with capabilities for training ML models and executing trades. It operates in two modes: training and inference. In the training mode, it runs a series of Python notebooks to clean, normalize, and train data using the XGBoost algorithm (Boosted Gradient Trees). In the inference mode, it operates as a web server where features can be posted, and it returns whether it's a Long or Short operation.
 
+# Training Models
+
 ## Data Model
 
 For both training and inference, we utilize the "DataFrame" model, consisting of a candlestick, its previous 11 candles, and corresponding indicators (previous trading day OHLC, Moving Averages, etc.).
@@ -111,6 +113,51 @@ IS_HYPER_PARAMETER_SEARCH=False # Are we going to use hyper parameter search?
 NUM_FOLDS_CROSSVALIDATION=10 # How many times should we shuffle the input data and cross fold it between train and validation?
 DATA_HYPERPARAMETERS_DIR=../00.data/hyperparameters # The folder for the hyperparameters search result
 ```
+After the environment variables have been set, we can then run training with the following command in the root folder:
+
+```shell
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 
+```
+
+This will run all the scenarios and generate the following artefacts in the output directory:
+
+| Artefact                                     | Description                                                                               |
+|----------------------------------------------|-------------------------------------------------------------------------------------------|
+| B3.WDO.5Min.80.40.check_model.xlsx           | XLSX file summarising the signals generated                                               |
+| B3.WDO.5Min.80.40.hist_long.png              | Histogram of predicted XGBoost scores for each candlestick for Long trades                |
+| B3.WDO.5Min.80.40.hist_short.png             | Histogram of predicted XGBoost scores for each candlestick for Long trades                |
+| B3.WDO.5Min.80.40.hyperparameters_long.xlsx  | Most significant features for the long model                                              |
+| B3.WDO.5Min.80.40.hyperparameters_short.xlsx | Most significant features for the short model                                             |
+| B3.WDO.5Min.80.40.long.train.score.txt       | The score of the model generated for the long operations                                  |
+| B3.WDO.5Min.80.40.parameters.pickle          | A pickle file containing the python parameters dictionary                                 |
+| B3.WDO.5Min.80.40.predicts.xlsx              | XLSX file containing the predicts for the test dataset                                    |
+| B3_WDO_5Min_80_40_process_long.py            | A python file that implements the long model                                              |
+| B3_WDO_5Min_80_40_process_short.py           | A python file that implements the short model                                             |
+| B3.WDO.5Min.80.40.raw.pickle                 | A pickle file containing a list of python dictionaries containing ALL the dataframes data |
+| B3.WDO.5Min.80.40.short.train.score.txt      | The score of the model generated for the short operations                                 |
+| B3.WDO.5Min.80.40.test_trades.xlsx           | The trades executed during the test dataset                                               |
+| B3.WDO.5Min.80.40.trades.xlsx                | The trades executed during the train dataset                                              |
+| B3.WDO.5Min.80.40.xgboostlongmodel.pickle    | The XGBoost long model in pickle format                                                   |
+| B3.WDO.5Min.80.40.xgboostlongmodel.txt       | A text dump of the XGBoost long model                                                     |
+| B3.WDO.5Min.80.40.xgboostshortmodel.pickle   | The XGBoost short model in pickle format                                                  |
+| B3.WDO.5Min.80.40.xgboostshortmodel.txt      | A text dump of the XGBoost short model                                                    |
+
+After the artefacts above have been generated, we can then serve them using the inference API that can be seen below.
+
+## Generating and evaluating multiple models with different hyperparameters
+
+It is important to notice that the models might vary a lot depending on the hyperparameters, so it is extremely important to tune those hyperparameters and verify which ones are the most performative.
+
+We can run train several models at the same time, the script:```run_scenarios.sh``` is a good example of that. When the scenarios are finished, we can then summarize all the generated models and plot a chart of the best models.
+
+We can see here the summary of the strategies: [strategy_summary.xlsx](https://s3.amazonaws.com/gbencke.pyautocrypto.example/strategy_summary.xlsx)
+
+And a chart with the accumulated P/L of the best model:
+
+![P/L Chart](https://s3.amazonaws.com/gbencke.pyautocrypto.example/002018.20240318080231.47817.png)
+
+# Serving and infering models
+
 
 
 
