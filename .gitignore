@@ -12,6 +12,7 @@ src/pyautotrader/data/*.db
 src/strategies/B3/WDOL/00.data/strategies/
 models/strategies/B3/WDOL/00.data/strategies/
 .idea/
+*.7z
 
 
 

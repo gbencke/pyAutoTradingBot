@@ -1,9 +1,9 @@
 import argparse
-from utils.data_import import import_data_from_profit_chart, add_data_import_args, import_data_from_csv, aggregate_data_from_csv
-from utils.model_export import generate_language_model, add_generate_language_args
-from utils.run_scenarios import run_scenarios, add_run_scenarios_args, summarize_scenarios
-from utils.run_scenarios import rerun_scenarios
-from server import start_server, add_server_args
+from .utils.data_import import import_data_from_profit_chart, add_data_import_args, import_data_from_csv, aggregate_data_from_csv
+from .utils.model_export import generate_language_model, add_generate_language_args
+from .utils.run_scenarios import run_scenarios, add_run_scenarios_args, summarize_scenarios
+from .utils.run_scenarios import rerun_scenarios
+from .server import start_server, add_server_args
 from pyautotrader.models import migrate_tables
 
 command_parser = argparse.ArgumentParser(

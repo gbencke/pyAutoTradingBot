@@ -17,6 +17,7 @@ def get_parameters(model):
         if parameters is None:
             parameters_files = glob.glob(
                 os.path.join(model, "*.parameters.pickle"))
+            print(parameters_files)
             if len(parameters_files) < 0:
                 raise HTTPException(
                     status_code=500, detail='Could no find the parameters file...')

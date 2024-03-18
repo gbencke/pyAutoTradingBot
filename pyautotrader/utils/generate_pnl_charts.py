@@ -18,10 +18,10 @@ def sanity_check():
         PYAUTOTRADER_ROOT = os.environ['PYAUTOTRADER_ROOT']
 
     PYAUTOTRADER_STRATEGIES_FOLDER = os.path.join(
-        PYAUTOTRADER_ROOT, 'src', 'strategies', 'B3', 'WDOL', '00.data', 'strategies')
+        PYAUTOTRADER_ROOT, 'models', 'strategies', 'B3', 'WDOL', '00.data', 'strategies')
 
     PYAUTOTRADER_STRATEGIES_SUMMARY = os.path.join(
-        PYAUTOTRADER_ROOT, 'src', 'strategies', 'B3', 'WDOL', '00.data', 'strategies', 'strategy_summary.xlsx')
+        PYAUTOTRADER_ROOT, 'models', 'strategies', 'B3', 'WDOL', '00.data', 'strategies', 'strategy_summary.xlsx')
 
     if not os.path.exists(PYAUTOTRADER_STRATEGIES_FOLDER):
         print('Strategies folder was not found...')
