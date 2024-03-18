@@ -8,7 +8,7 @@ import joblib
 from fastapi import HTTPException
 from sqlalchemy import desc
 from sqlalchemy.orm import Session
-from models.entities import QuoteORM
+from pyautotrader.models.entities import QuoteORM
 
 model_to_use = None
 best_short_booster = None

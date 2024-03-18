@@ -11,7 +11,7 @@ from sqlalchemy.exc import IntegrityError
 from .value_objects import Quote
 from .parameters import get_parameters
 from .predict import get_predict as get_predict_db
-from models.entities import QuoteORM
+from pyautotrader.models.entities import QuoteORM
 
 app = FastAPI()
 

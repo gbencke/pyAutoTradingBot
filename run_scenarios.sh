@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source ./env/bin/activate
-
 source ./clean_notebooks.sh
 
 export PYTHONPATH=$PWD
@@ -19,7 +17,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python -m pyautotrader run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=2
@@ -30,7 +28,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=3
@@ -41,7 +39,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=4
@@ -52,7 +50,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -64,7 +62,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=6
@@ -75,7 +73,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=7
@@ -86,7 +84,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=8
@@ -97,7 +95,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -109,7 +107,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=10
@@ -120,7 +118,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=11
@@ -131,7 +129,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=12
@@ -142,7 +140,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -154,7 +152,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=14
@@ -165,7 +163,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=15
@@ -176,7 +174,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=16
@@ -187,7 +185,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -199,7 +197,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=18
@@ -210,7 +208,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=19
@@ -221,7 +219,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=20
@@ -232,7 +230,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -244,7 +242,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=22
@@ -255,7 +253,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=23
@@ -266,7 +264,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=24
@@ -277,7 +275,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -289,7 +287,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=26
@@ -300,7 +298,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=27
@@ -311,7 +309,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=28
@@ -322,7 +320,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -334,7 +332,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=30
@@ -345,7 +343,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=31
@@ -356,7 +354,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=32
@@ -367,7 +365,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -379,7 +377,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=34
@@ -390,7 +388,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=35
@@ -401,7 +399,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=36
@@ -412,7 +410,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -424,7 +422,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=38
@@ -435,7 +433,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=39
@@ -446,7 +444,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=40
@@ -457,7 +455,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -469,7 +467,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=42
@@ -480,7 +478,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=43
@@ -491,7 +489,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=44
@@ -502,7 +500,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -514,7 +512,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=46
@@ -525,7 +523,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=47
@@ -536,7 +534,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=48
@@ -547,7 +545,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -559,7 +557,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=50
@@ -570,7 +568,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=51
@@ -581,7 +579,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=52
@@ -592,7 +590,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -604,7 +602,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=54
@@ -615,7 +613,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=55
@@ -626,7 +624,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=56
@@ -637,7 +635,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -649,7 +647,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=58
@@ -660,7 +658,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=59
@@ -671,7 +669,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=60
@@ -682,7 +680,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -694,7 +692,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=62
@@ -705,7 +703,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=63
@@ -716,7 +714,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=64
@@ -727,7 +725,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -739,7 +737,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=66
@@ -750,7 +748,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=67
@@ -761,7 +759,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=68
@@ -772,7 +770,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -784,7 +782,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=70
@@ -795,7 +793,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=71
@@ -806,7 +804,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=72
@@ -817,7 +815,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -829,7 +827,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=74
@@ -840,7 +838,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=75
@@ -851,7 +849,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=76
@@ -862,7 +860,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -874,7 +872,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=78
@@ -885,7 +883,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=79
@@ -896,7 +894,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=80
@@ -907,7 +905,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -919,7 +917,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=82
@@ -930,7 +928,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=83
@@ -941,7 +939,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=84
@@ -952,7 +950,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -964,7 +962,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=86
@@ -975,7 +973,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=87
@@ -986,7 +984,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=88
@@ -997,7 +995,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1009,7 +1007,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=90
@@ -1020,7 +1018,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=91
@@ -1031,7 +1029,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=92
@@ -1042,7 +1040,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1054,7 +1052,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=94
@@ -1065,7 +1063,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=95
@@ -1076,7 +1074,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=96
@@ -1087,7 +1085,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1099,7 +1097,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=98
@@ -1110,7 +1108,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=99
@@ -1121,7 +1119,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=100
@@ -1132,7 +1130,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1144,7 +1142,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=102
@@ -1155,7 +1153,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=103
@@ -1166,7 +1164,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=104
@@ -1177,7 +1175,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1189,7 +1187,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=106
@@ -1200,7 +1198,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=107
@@ -1211,7 +1209,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=108
@@ -1222,7 +1220,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1234,7 +1232,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=110
@@ -1245,7 +1243,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=111
@@ -1256,7 +1254,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=112
@@ -1267,7 +1265,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1279,7 +1277,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=114
@@ -1290,7 +1288,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=115
@@ -1301,7 +1299,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=116
@@ -1312,7 +1310,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1324,7 +1322,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=118
@@ -1335,7 +1333,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=119
@@ -1346,7 +1344,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=120
@@ -1357,7 +1355,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1369,7 +1367,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=122
@@ -1380,7 +1378,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=123
@@ -1391,7 +1389,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=124
@@ -1402,7 +1400,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1414,7 +1412,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=126
@@ -1425,7 +1423,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=127
@@ -1436,7 +1434,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=128
@@ -1447,7 +1445,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1459,7 +1457,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=130
@@ -1470,7 +1468,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=131
@@ -1481,7 +1479,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=132
@@ -1492,7 +1490,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1504,7 +1502,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=134
@@ -1515,7 +1513,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=135
@@ -1526,7 +1524,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=136
@@ -1537,7 +1535,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1549,7 +1547,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=138
@@ -1560,7 +1558,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=139
@@ -1571,7 +1569,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=140
@@ -1582,7 +1580,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1594,7 +1592,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=142
@@ -1605,7 +1603,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=143
@@ -1616,7 +1614,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=144
@@ -1627,7 +1625,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1639,7 +1637,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=146
@@ -1650,7 +1648,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=147
@@ -1661,7 +1659,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=148
@@ -1672,7 +1670,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1684,7 +1682,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=150
@@ -1695,7 +1693,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=151
@@ -1706,7 +1704,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=152
@@ -1717,7 +1715,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1729,7 +1727,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=154
@@ -1740,7 +1738,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=155
@@ -1751,7 +1749,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=156
@@ -1762,7 +1760,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1774,7 +1772,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=158
@@ -1785,7 +1783,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=159
@@ -1796,7 +1794,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=160
@@ -1807,7 +1805,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1819,7 +1817,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=162
@@ -1830,7 +1828,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=163
@@ -1841,7 +1839,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=164
@@ -1852,7 +1850,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1864,7 +1862,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=166
@@ -1875,7 +1873,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=167
@@ -1886,7 +1884,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=168
@@ -1897,7 +1895,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1909,7 +1907,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=170
@@ -1920,7 +1918,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=171
@@ -1931,7 +1929,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=172
@@ -1942,7 +1940,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1954,7 +1952,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=174
@@ -1965,7 +1963,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=175
@@ -1976,7 +1974,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=176
@@ -1987,7 +1985,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -1999,7 +1997,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=178
@@ -2010,7 +2008,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=179
@@ -2021,7 +2019,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=180
@@ -2032,7 +2030,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -2044,7 +2042,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=182
@@ -2055,7 +2053,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=183
@@ -2066,7 +2064,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=184
@@ -2077,7 +2075,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -2089,7 +2087,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=186
@@ -2100,7 +2098,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=187
@@ -2111,7 +2109,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=188
@@ -2122,7 +2120,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -2134,7 +2132,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=190
@@ -2145,7 +2143,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=191
@@ -2156,7 +2154,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=192
@@ -2167,7 +2165,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -2179,7 +2177,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=194
@@ -2190,7 +2188,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=195
@@ -2201,7 +2199,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=196
@@ -2212,7 +2210,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 export WEIGHT_RATIO=0.8
@@ -2224,7 +2222,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=198
@@ -2235,7 +2233,7 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 export WEIGHT_RATIO=0.8
 export NUM_TREES=199
@@ -2246,11 +2244,11 @@ export DECISION_BOUNDARY=0.4
 export CURRENT_5MIN_FILE_CSV='WDO$M5.csv'
 export CURRENT_TIMEFRAME=5Min
 export MAX_TRADE_DURATION=24
-python __main__.py run_scenarios --minimum-interactions 1 & 
+poetry run python -m pyautotrader run_scenarios --minimum-interactions 1 &
 
 wait
 
-python __main__.py summarize_scenarios
+poetry run python -m pyautotrader summarize_scenarios
 
 cd pyautotrader/utils
 

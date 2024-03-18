@@ -34,7 +34,7 @@ def summarize():
     strategies_run = []
 
     current_strategies_folder = os.path.join(
-        os.getcwd(), '..', 'models', 'strategies', 'B3', 'WDOL', '00.data', 'strategies')
+        os.getcwd(), '.', 'models', 'strategies', 'B3', 'WDOL', '00.data', 'strategies')
 
     final_excel_summary = os.path.join(
         current_strategies_folder, 'strategy_summary.xlsx')
@@ -171,11 +171,11 @@ def run_notebook():
     current_date = datetime.now().strftime("%Y%m%d%H%M%S")+"."+str(os.getpid())
 
     current_folder = os.path.join(
-        os.getcwd(), '..', 'models', 'strategies', 'B3', 'WDOL', '02.candle_strategy')
+        os.getcwd(), '.', 'models', 'strategies', 'B3', 'WDOL', '02.candle_strategy')
     current_strategies = os.path.join(
-        os.getcwd(), '..', 'models', 'strategies', 'B3', 'WDOL', '00.data', 'strategies')
+        os.getcwd(), '.', 'models', 'strategies', 'B3', 'WDOL', '00.data', 'strategies')
     current_cache = os.path.join(
-        os.getcwd(), '..', 'models', 'strategies', 'B3', 'WDOL', '00.data', 'strategies', 'cache')
+        os.getcwd(), '.', 'models', 'strategies', 'B3', 'WDOL', '00.data', 'strategies', 'cache')
 
     os.mkdir(os.path.join(current_strategies, current_date))
     current_strategies = os.path.join(current_strategies, current_date)
@@ -236,7 +236,7 @@ def run_scenarios(args):
     MINIMUM_INTERACTIONS = int(args.minimum_interactions)
 
     os.environ["DATA_INPUT_DIR"] = os.path.join(
-        os.getcwd(), '..', 'models', 'strategies', 'B3', 'WDOL', '00.data', 'input')
+        os.getcwd(), '.', 'models', 'strategies', 'B3', 'WDOL', '00.data', 'input')
     for current_interaction in range(MINIMUM_INTERACTIONS):
         CURRENT_TARGET = os.environ['CURRENT_TARGET']
         CURRENT_STOP = os.environ['CURRENT_STOP']

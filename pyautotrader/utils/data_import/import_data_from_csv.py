@@ -3,7 +3,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
-from models.entities import QuoteORM
+from pyautotrader.models.entities import QuoteORM
 
 def import_data_from_csv(args):
     if args.source is None:

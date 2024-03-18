@@ -14,6 +14,5 @@ export PYAUTOTRADER_MODEL=../models/strategies/B3/WDOL/00.data/output
 
 cd pyautotrader || exit
 
-poetry run python __main__.py  start_server --sqlalchemy-connection-string sqlite:///data//pyautotrader.db  --xgboost-model $PYAUTOTRADER_MODEL
-
+poetry run python -m pyautotrader  start_server --sqlalchemy-connection-string sqlite:///data//pyautotrader.db  --xgboost-model $PYAUTOTRADER_MODEL
 
