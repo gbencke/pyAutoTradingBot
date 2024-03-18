@@ -176,3 +176,32 @@ We can see below a image of the [ProfitChartBot](https://github.com/gbencke/Prof
 ![Alt text](./ProfitDemoBot.png)
 
 And we can also check this video demo: [ProfitChartBot Demo](https://s3.amazonaws.com/gbencke.pyautocrypto.example/2022.04.07.ProfitChartBotDemo.mp4)
+
+We can start the inference api using the ```run_server.sh``` script or just running:
+```bash
+poetry run python -m pyautotrader  start_server --sqlalchemy-connection-string sqlite:///data//pyautotrader.db  --xgboost-model $PYAUTOTRADER_MODEL
+```
+where $PYAUTRADER_MODEL is the model that is going to be served through the API.
+
+The API has 3 endpoints:
+
+#### GET - "/predict/{exchange}/{asset}/{timeframe}/{date}/{time}/"
+This endpoint returns the score from the model for a certain candle in a certain date / time / asset / exchange. It is important to notice that it is required that the data for this candle should already be posted in the database that is being served.
+
+#### GET - "/parameters/"
+This endpoint returns the dictionary of parameters that is being used by the model.
+
+#### POST "/quotes/{exchange}/{asset}/{timeframe}/"
+This endpoint writes to the database the data regarding a certain candlestick in a certain exchange / asset / timeframe
+
+# Instalation
+
+This project uses poetry, and after the repo has been cloned, it is necessary to run ```poetry install``` to create the virtual environment and install all dependencies on it.
+
+# Pending Improvements
+
+There are many improvements to be made, including, but not limited to:
+* Add an API in order to perform automatic training of new models
+* Create a database for the generated model artefacts, instead of relying on the filesystem.
+* Allow dynamic indicators and define the length of relevant previous candlesticks during runtime
+And many more...
